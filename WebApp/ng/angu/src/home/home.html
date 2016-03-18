@@ -1,0 +1,480 @@
+<!-- uiView:  -->
+
+<div ui-view="" ui-view-name="entry-view"><!-- uiView: header -->
+    <div ui-view="header">
+
+
+        <nav class="nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <nav-toggle ng-click="nav.toggle()">
+                            <button class="nav--toggle icon-nav">
+
+
+                                <a href="/ng"> <span class="icon-burger"></span></a>
+
+
+                            </button>
+                        </nav-toggle>
+                            <ul class="nav--list" >
+                                <li>
+                                    <!--<a href="/#/home/">HOME</a>-->
+                                    <a ui-sref="home">HOME</a>
+
+                                </li>
+
+                                <li ng-show='home.ShowSpeakerPage'>
+                                    <a ui-sref="speaker">Speakers</a>
+                                </li>
+
+                                <li>
+                                    <a ui-sref="author">Pluralsight Authors</a>
+                                </li>
+                            </ul>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+
+        <div class="body-bag ng-scope">
+            <section class="hero" style="">
+                <h1 class="hero--heading"><span class="brand--logo angular"></span>Angular U</h1>
+                <!--<span ng-click="googleMap()" class="hero&#45;&#45;extra">June 22 to 25 2015 - Hyatt Regency, San&nbsp;Francisco Airport</span>-->
+            </section>
+        </div>
+    </div>
+    <!-- uiView:  -->
+    <div ui-view="" autoscroll="" class="ng-scope">
+        <div id="home" class="ng-scope">
+
+
+            <section class="nav--section live-feed">
+                <div class="container">
+
+
+                    <div class="row row-centered">
+                        <div class="col-md-10 col-centered">
+                            <div class="row text-center">
+
+
+                                <a href="/angu/LiveFeedNotify" class="btn btn-primary btn-lg xcenter-block">Sign Up to
+                                    be
+                                    Notified of Future Events</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row row-centered">
+                        <div class="col-md-10 col-centered">
+                            <h2 class="type--lead"><span class="type--color">Opening Keynote From the Angular Team June 22, 2015 (Brad Green, Igor Minar and Misko Hevery)</span>
+                            </h2>
+
+                            <div class="video-embed">
+                                <iframe ng-src="https://www.youtube.com/embed/videoseries?list=PLQrl6x_e_AZG0RdzIYVns4eGFxUEF61Lw"
+                                        width="431" height="263" frameborder="0" allowfullscregulpen=""
+                                        src="https://www.youtube.com/embed/videoseries?list=PLQrl6x_e_AZG0RdzIYVns4eGFxUEF61Lw"></iframe>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <div class="container nav--section">
+
+                <div class="row row-centered">
+                    <div class="col-sm-12 col-centered">
+                        <h2 class="type--lead">
+                    <span class="type--color">Covering Angular 1.x, 2, <br>
+                    TypeScript, ECMAScript 6, Web Components and More</span>
+                        </h2>
+                    </div>
+                </div>
+
+
+                <div class="content--section">
+                    <h2 class="type--lead">Keynote Presenters</h2>
+
+
+                    <div class="persona--container">
+                        <div ng-repeat="speaker in home.speakers | filter: {keyNoteSpeaker:true} " keynote=""
+                             image-width="290"
+                             image-height="190" image-background="ffffff">
+                            <div class="persona">
+                                <div class="persona--imgx">
+                                    <img ng-src="{{speaker.speakerImageUrl}}?format=jpg&height=190&width=290&scale=both&mode=pad&Bgcolor=ffffff"
+                                         alt="Picture {{speaker.firstName}} {{speaker.lastName}}"/>
+                                    <!--<img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218181456-31683.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Igor Minar" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218181456-31683.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">-->
+                                </div>
+                                <h3><a href="#">{{speaker.firstName}} {{speaker.lastName}}</a></h3>
+
+                                <p>
+                                    <!--This works becuase of ngSanitize-->
+                                    <span ng-bind-html="speaker.bio"></span>
+                                </p>`
+                            </div>
+
+
+                            <!--<div class="persona" >-->
+
+                            <!--<div  class="persona&#45;&#45;img">-->
+                            <!--<img-->
+                            <!--alt="{{speaker.firstName}} {{speaker.lastName}}"-->
+                            <!--ng-src="{{speaker.speakerImageUrl}}">-->
+                            <!--</div>-->
+                            <!--<h3><a href="#">{{speaker.firstName}} {{speaker.lastName}}</a></h3>-->
+
+                            <!--<p>-->
+                            <!--{{ speaker.bio}}-->
+                            <!--</p>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content--section media" id="media">
+                    <div class="row">
+                        <div class="videos col-sm-6">
+                            <div class="video--main">
+                                <h3 class="video--main--title">
+                                  <span class="type--lead type--color ng-binding" style="font-weight: 700;font-size: 16px;">
+                                    Brad Green Talks Directives, Controllers become Components in Angular 2&nbsp;
+                                  </span>
+                                    <span></span>
+                                    <span class="ng-binding"><a
+                                            href="http://twitter.com/home?status=Check+Out+&quot;Brad+Green,+Igor+Minar+and+Misko+Havery+Talk+Angular+2&quot;+at+@AngularU+https://angularu.com/ng/session/2015sf/angular-2-roadmap-update+@bradlygreen"
+                                            target="_blank" class="icon-twitter"></a></span>
+                                </h3>
+
+                                <div class="video-embed">
+                                    <iframe ng-src="https://player.vimeo.com/video/128435293" width="431" height="263"
+                                            frameborder="0" webkitallowfullscreen="" mozallowfullscreen=""
+                                            allowfullscreen="" src="https://player.vimeo.com/video/128435293">
+                                    </iframe>
+                                </div>
+                            </div>
+                            <ul class="video--list">
+                                <!-- ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/128435293.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/128435293.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId --><span
+                                        ng-if="vid.vimeoId === home.currentVideo.vimeoId"
+                                        class="video--playing ng-scope">Playing</span>
+                                    <!-- end ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126991619.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126991619.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281527.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281527.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281528.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281528.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                            </ul>
+
+
+                        </div>
+                        <div class="news col-sm-6">
+                            <ul class="news--list">
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">June</span>
+                                        <span class="news-single--day">8</span>
+                                    </div>
+                                    <a
+                                            class="news-single--content"
+                                            href="#">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Rangle.io's Women Who Code Contest Announced</h3>
+                                    </a>
+                                </li>
+
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">April</span>
+                                        <span class="news-single--day">15</span>
+                                    </div>
+                                    <a
+                                            class="news-single--content"
+                                            href="#">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Brad Green Tells Us What to Expect at Angular
+                                            Team
+                                            Keynote at Angular U</h3>
+                                    </a>
+                                </li>
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">April</span>
+                                        <span class="news-single--day">7</span>
+                                    </div>
+                                    <a
+                                            class="news-single--content"
+                                            href="#">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Honored To Have Angular U On AngularJS.Org
+                                            Site</h3>
+                                    </a>
+                                </li>
+
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">March</span>
+                                        <span class="news-single--day">29</span>
+                                    </div>
+                                    <a
+                                            class="news-single--content"
+                                            href="#">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Introducing the Angular U Conference - Dan
+                                            Wahlin</h3>
+                                    </a>
+                                </li>
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">March</span>
+                                        <span class="news-single--day">26</span>
+                                    </div>
+                                    <a
+                                            class="news-single--content"
+                                            href="#">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Why Am I so Excited about Angluar U - Peter
+                                            Kellner</h3>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <!--<div class="text-center">-->
+                            <!--<button class="btn btn-primary">More news</button>-->
+                            <!--</div>-->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social center-block">
+                    <h4>Don’t want to miss anything? <a
+                            class="type--color"
+                            href="#">Get
+                        email alerts</a> or follow us on: </h4>
+                    <ul>
+                        <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"
+                               href="http://twitter.com/angularu"></a></li>
+                        <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"
+                               href="https://www.facebook.com/angularu"></a></li>
+                        <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668" target="_blank"
+                               class="icon-gplus"
+                               href="https://plus.google.com/u/0/communities/100721362580915494668"></a></li>
+                    </ul>
+                </div>
+
+
+                <div id="venue" class="slider nav--section">
+                    <div class="slide--container">
+                        <ul rn-carousel="" slides="slides" class="slide--list">
+                            <li>
+                                <div class="slide">
+                                    <div class="slide--content">
+                                        <p>The conference takes place at the <span
+                                                class="type--color">Hyatt Regency</span>, a
+                                            short distance from the San&nbsp;Francisco Airport and within a short taxi
+                                            or Bart
+                                            ride from San&nbsp;Francisco Downtown.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- uiView: footer -->
+    <div ui-view="footer" class="ng-scope">
+        <div id="sponsors" class="nav--section container ng-scope">
+            <div class="separator">
+                <span class="separator--icon icon-heart"></span>
+            </div>
+
+
+            <h2 class="type--lead">Premiere Sponsor</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--premiere">
+                    <a href="http://rangle.io/" target="_blank"><img class="sponsor--img"
+                                                                     ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"
+                                                                     alt="Rangle.io"
+                                                                     src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"></a>
+                </li>
+                <!--<li class="sponsor sponsor&#45;&#45;premiere">-->
+                <!--<a ng-href="http://go.rangle.io/women?utm_campaign=Women%27s%20Initiative%20AngularU%20Contest&utm_medium=web&utm_source=AngularU%20Website%20News" target="_blank"><img class="sponsor&#45;&#45;img"-->
+                <!--ng-src="https://angularu.com/miscpages/AU-contest-au-ad.jpg"-->
+                <!--alt="Rangle.io Woman who code contest"></a>-->
+                <!--</li>-->
+            </ul>
+
+
+            <h2 class="type--lead">Gold Sponsors</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="http://form.io/" target="_blank" href="http://form.io/"><img class="sponsor--img"
+                                                                                             ng-src="https://angularu.com/content/ng/angu/images/formio-logo-full.png"
+                                                                                             alt="formio"
+                                                                                             src="https://angularu.com/content/ng/angu/images/formio-logo-full.png"></a>
+                </li>
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="http://orcsweb.com/" target="_blank" href="http://orcsweb.com/"><img
+                            class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/orcsweb.png"
+                            alt="Orcsweb" src="https://angularu.com/content/ng/angu/images/orcsweb.png"></a>
+                </li>
+
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="https://microsoft.com" target="_blank" href="https://microsoft.com"><img
+                            class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/mslogo.png"
+                            alt="Microsoft" src="https://angularu.com/content/ng/angu/images/mslogo.png"></a>
+                </li>
+
+            </ul>
+
+            <h2 class="type--lead">Silver Sponsors</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="http://pluralsight.com/" target="_blank" href="http://pluralsight.com/"><img
+                            class="sponsor--img"
+                            ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png" alt="Puralsight"
+                            src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png"></a>
+                </li>
+
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="https://developers.braintreepayments.com" target="_blank"
+                       href="https://developers.braintreepayments.com"><img class="sponsor--img"
+                                                                            ng-src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png"
+                                                                            alt="Braintree PayPal"
+                                                                            src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png"></a>
+                </li>
+
+
+            </ul>
+
+
+            <h2 class="type--lead">Media Partners</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="https://www.airpair.com/angularjs " target="_blank"
+                       href="https://www.airpair.com/angularjs"><img class="sponsor--img"
+                                                                     ng-src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250"
+                                                                     alt="AirPair"
+                                                                     src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250"></a>
+                </li>
+            </ul>
+
+            <div class="text-center">
+                <a ng-href="mailto:sponsor@angularu.com" class="btn btn-primary btn-lg"
+                   href="mailto:sponsor@angularu.com">Become a sponsor</a>
+            </div>
+        </div>
+
+
+        <footer class="footer ng-scope">
+            <div class="footer--top">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 footer--contact">
+                            <a ng-href="https://angularu.com/about/Privacy" href="https://angularu.com/about/Privacy">Privacy</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="https://angularu.com/about/CodeOfConduct"
+                               href="https://angularu.com/about/CodeOfConduct">Code of Conduct</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="mailto:service2015@angularu.com" href="mailto:service2015@angularu.com">Contact
+                                us</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
+                            <div class="social alt">
+                                <h4>Follow us on:</h4>
+                                <ul>
+                                    <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"
+                                           href="http://twitter.com/angularu"></a></li>
+                                    <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"
+                                           href="https://www.facebook.com/angularu"></a></li>
+                                    <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668"
+                                           target="_blank" class="icon-gplus"
+                                           href="https://plus.google.com/u/0/communities/100721362580915494668"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sponsors">
+
+                <div class="container">
+                    <section class="sponsor--box ng-hide"
+                             ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'}).length &gt; 0">
+                        <h3 class="uppercase">Platinum</h3>
+
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} -->
+                        </div>
+                    </section>
+
+                    <section class="sponsor--box ng-hide"
+                             ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Gold'}).length &gt; 0">
+                        <h3 class="uppercase">Gold</h3>
+
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} -->
+                        </div>
+                    </section>
+
+                    <section class="sponsor--box ng-hide"
+                             ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Silver'}).length &gt; 0">
+                        <h3 class="uppercase">Silver</h3>
+
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} -->
+                        </div>
+                    </section>
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+
+
+

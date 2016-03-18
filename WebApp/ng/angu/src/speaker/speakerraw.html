@@ -1,0 +1,2304 @@
+
+<!DOCTYPE html><html ng-app="angUApp" class="ng-scope"><head><base href="https://angularu.com"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+    <base href="/ng/">
+    <meta name="fragment" content="!">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular U (An Angular Conference)</title>
+
+
+    <meta name="description" content="An Angular Conference Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More. Who’s Who of Angular Presenters and Its Future">
+
+
+
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-57x57.png?v=635636111958773961">
+    <link rel="apple-touch-icon" sizes="60x60" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-60x60.png?v=635636111958793967">
+    <link rel="apple-touch-icon" sizes="72x72" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-72x72.png?v=635636111958813973">
+    <link rel="apple-touch-icon" sizes="76x76" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-76x76.png?v=635636111958834093">
+    <link rel="apple-touch-icon" sizes="114x114" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-114x114.png?v=635636111958864035">
+    <link rel="apple-touch-icon" sizes="120x120" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-120x120.png?v=635636111958884242">
+    <link rel="apple-touch-icon" sizes="144x144" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-144x144.png?v=635636111958914014">
+    <link rel="apple-touch-icon" sizes="152x152" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-152x152.png?v=635636111958944059">
+    <link rel="apple-touch-icon" sizes="180x180" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-180x180.png?v=635636111958964041">
+    <link rel="icon" type="image/png" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/favicon-32x32.png?v=635636111959124101" sizes="32x32">
+    <link rel="icon" type="image/png" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/android-chrome-192x192.png?v=635636111958723954" sizes="192x192">
+    <link rel="icon" type="image/png" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/favicon-96x96.png?v=635636111959154106" sizes="96x96">
+    <link rel="icon" type="image/png" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/favicon-16x16.png?v=635636111959104103" sizes="16x16">
+    <link rel="manifest" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/manifest.json?v=635636111959174262">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/mstile-144x144.png?v=635636111959234284">
+    <meta name="theme-color" content="#ffffff">
+
+
+
+
+
+
+
+
+
+
+
+    <link rel="stylesheet" href="/Content/ng/angu/styles/sosa-font-local.min.css">
+    <link href="//d1n4bbuvjcnilu.cloudfront.net/Content/ng/angu/styles/main.min.css?v=635755639088887806" rel="stylesheet">
+
+
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            z-index: 9999;
+            background: url('/Content/Images/page-loader.gif') 50% 50% no-repeat rgb(249, 249, 249);
+        }
+    </style>
+
+</head>
+
+<body>
+
+<!-- uiView:  --><div ui-view="" ui-view-name="entry-view" class="ng-scope"><!-- uiView: header --><div ui-view="header" class="ng-scope"><main-nav class="ng-scope ng-isolate-scope"><nav class="nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <nav-toggle ng-click="nav.toggle()"><button class="nav--toggle icon-nav">
+                    <span class="icon-burger"></span>
+                </button>
+                </nav-toggle>
+                <page-nav open="nav.isOpen" class="ng-isolate-scope"><ul class="nav--list" ng-class="{'open': pages.open}">
+                    <state-nav-item state="home" class="ng-isolate-scope"><li ng-class="{active: link.active}">
+                        <a ui-sref="home" href="/ng/">
+                            <ng-transclude>
+                                <span class="icon-home ng-scope"></span><span class="sr-only ng-scope">Home</span>
+                            </ng-transclude>
+                        </a>
+                    </li></state-nav-item>
+                    <!-- ngIf: pages.show('speakers') --><state-nav-item state="speakers" ng-if="pages.show('speakers')" class="ng-scope ng-isolate-scope"><li ng-class="{active: link.active}" class="active">
+                    <a ui-sref="speakers" href="/ng/speaker">
+                        <ng-transclude><span class="ng-scope">
+    Speakers
+  </span></ng-transclude>
+                    </a>
+                </li></state-nav-item><!-- end ngIf: pages.show('speakers') -->
+                    <!-- ngIf: pages.show('sessions') --><state-nav-item state="sessions" ng-if="pages.show('sessions')" class="ng-scope ng-isolate-scope"><li ng-class="{active: link.active}">
+                    <a ui-sref="sessions" href="/ng/session">
+                        <ng-transclude><span class="ng-scope">
+    Sessions
+  </span></ng-transclude>
+                    </a>
+                </li></state-nav-item><!-- end ngIf: pages.show('sessions') -->
+                    <!-- ngIf: pages.show('overview') --><state-nav-item state="overview" ng-if="pages.show('overview')" class="ng-scope ng-isolate-scope"><li ng-class="{active: link.active}">
+                    <a ui-sref="overview" href="/ng/overview">
+                        <ng-transclude><span class="ng-scope">
+    Agenda
+  </span></ng-transclude>
+                    </a>
+                </li></state-nav-item><!-- end ngIf: pages.show('overview') -->
+                    <!-- ngIf: pages.show('pricing') -->
+                    <!-- ngIf: pages.show('fun') --><state-nav-item state="fun" ng-if="pages.show('fun')" class="ng-scope ng-isolate-scope"><li ng-class="{active: link.active}">
+                    <a ui-sref="fun" href="/ng/fun">
+                        <ng-transclude><span class="ng-scope">
+    Fun
+  </span></ng-transclude>
+                    </a>
+                </li></state-nav-item><!-- end ngIf: pages.show('fun') -->
+                    <li ng-controller="NavController as more" class="hidden-xs ng-scope">
+                        <a href="#" class="nav--more" ng-click="more.toggle()">More</a>
+                        <!-- toggle 'open' class for to open/close nav dropdown -->
+                        <div class="nav--drop open ng-hide" ng-show="more.isOpen">
+                            <ul class="nav--drop--list">
+                                <li><a href="Videos">Videos</a></li>
+                                <li><a href="/News">News</a></li>
+                                <li><a href="/Angu/CommunityEvent">Community Event 6/23</a></li>
+                                <li><a href="pluralsight">Pluralsight Courses</a></li>
+
+                                <!--<li><a href="">Sponsors</a></li>-->
+                                <!--<li><a href="">About AngularU</a></li>-->
+                            </ul>
+                            <div class="social alt">
+                                <h4>Follow us on: </h4>
+                                <ul>
+                                    <li><a href="http://twitter.com/angularu" target="_blank" class="icon-twitter"></a></li>
+                                    <li><a href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"></a></li>
+                                    <li><a href="https://plus.google.com/b/100446488804563546766/" target="_blank" class="icon-gplus"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </li>
+                    <!--<li class="visible-xs">-->
+                    <!--<a href="/angu/purchasetickets">Buy Ticket</a>-->
+                    <!--</li>-->
+                    <li class="visible-xs">
+                        <a href="/ng/Videos">Videos</a>
+                    </li>
+                    <!--<li class="visible-xs">-->
+                    <!--<a href="/angu/CommunityEvent">Community Event June 23</a>-->
+                    <!--</li>-->
+                    <li class="visible-xs">
+                        <a href="pluralsight">Pluralsight Courses</a>
+                    </li>
+                    <!-- ngIf: pages.hotelBookingUrl --><li ng-if="pages.hotelBookingUrl" class="visible-xs ng-scope">
+                    <a ng-href="https://angularu.com/angu/hotels" href="https://angularu.com/angu/hotels">Book a hotel room</a>
+                </li><!-- end ngIf: pages.hotelBookingUrl -->
+
+
+                </ul>
+                </page-nav>
+            </div>
+            <div class="col-md-7">
+                <ticket-signup><div class="ping-tickets">
+
+
+                    <a ng-hide="ticket.purchaseUrl.length == 0" ng-href="" class="btn btn-primary ng-hide">
+                        Buy Ticket
+                    </a>
+                    <!-- ngIf: ticket.hotelBookingUrl -->
+                </div>
+                </ticket-signup>
+                <user-nav class="ng-isolate-scope"><div class="nav--user" ng-class="{'open': userNav.isOpen}" ng-click="userNav.toggle()">
+                    <button class="nav--user--toggle icon-user"></button>
+                    <a class="nav--user--name ng-binding ng-hide" ng-show="userNav.username"></a>
+                    <a class="nav--user--name" href="#" ng-hide="userNav.username">login</a>
+                    <ul class="nav--list nav--user--list" ng-class="{'open': userNav.isOpen}">
+                        <li ng-hide="userNav.username">
+                            <a href="/Account/Login">Login</a>
+                        </li>
+                        <li ng-hide="userNav.username">
+                            <a href="/Register/ForgotPassword">Forgot Password</a>
+                        </li>
+                        <li ng-show="userNav.username" class="ng-hide">
+                            <a href="/Register/ForgotPassword">Reset Password</a>
+                        </li>
+                        <li>
+                            <a href="/Angu/CallForPapers">Call For Speakers</a>
+                        </li>
+                        <li ng-show="userNav.username" class="ng-hide">
+                            <a href="/Account/Logout">Logout</a>
+                        </li>
+                    </ul>
+                </div>
+                </user-nav>
+            </div>
+        </div>
+    </div>
+</nav>
+</main-nav>
+    <div class="body-bag ng-scope">
+        <section class="hero" style="">
+            <h1 class="hero--heading"><span class="brand--logo angular"></span>Angular U</h1>
+            <!--<span ng-click="googleMap()" class="hero&#45;&#45;extra">June 22 to 25 2015 - Hyatt Regency, San&nbsp;Francisco Airport</span>-->
+        </section>
+    </div>
+</div>
+    <!-- uiView:  --><div ui-view="" autoscroll="" class="ng-scope"><div id="speakers" class="container ng-scope">
+        <!--<div class="separator">-->
+        <!--<span class="separator&#45;&#45;icon icon-code"></span>-->
+        <!--</div>-->
+        <h2 class="type--lead">The speakers</h2>
+
+        <!-- ngIf: list.showSessions && list.showSessionDetails -->
+
+        <ul class="speakers">
+            <!-- ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218181456-31683.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Igor Minar" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218181456-31683.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/igor-minar-31683">
+                        <h4 class="color ng-binding">Igor Minar</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/igorminar" target="_blank" class="icon-twitter" href="http://twitter.com/igorminar"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+IgorMinar/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+IgorMinar/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Igor is a software engineer at Google. He is the lead of the AngularJS, practitioner of test driven development, open source enthusiast, hacker</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-2-roadmap-update">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular 2 Roadmap Update</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 9:00 AM to 10:45 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218182751-31682.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Misko Hevery" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218182751-31682.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/misko-hevery-31682">
+                        <h4 class="color ng-binding">Misko Hevery</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/mhevery" target="_blank" class="icon-twitter" href="http://twitter.com/mhevery"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+MiškoHevery/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+MiškoHevery/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Miško Hevery is the creator of AngularJS framework. He has passion for making complex things simple.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-2-roadmap-update">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular 2 Roadmap Update</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 9:00 AM to 10:45 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226040941-31684.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Brad Green" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226040941-31684.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/brad-green-31684">
+                        <h4 class="color ng-binding">Brad Green</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/bradlygreen" target="_blank" class="icon-twitter" href="http://twitter.com/bradlygreen"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+BradGreen/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+BradGreen/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/bradlykgreen" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/bradlykgreen"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Brad is an engineering director at Google where he manages development of the AngularJS framework and Google's internal sales productivity products.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-2-roadmap-update">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular 2 Roadmap Update</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 9:00 AM to 10:45 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131213212414-1124.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Douglas Crockford" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131213212414-1124.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/douglas-crockford-1124">
+                        <h4 class="color ng-binding">Douglas Crockford</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/118095276221607585885/about" target="_blank" class="icon-gplus" href="https://plus.google.com/118095276221607585885/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Douglas Crockford is an American computer programmer and entrepreneur who is best known for his ongoing involvement in the development of the JavaScript language and for having popularized the data format JSON.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/upgrading-the-web">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Upgrading the Web</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 4:40 PM to 5:40 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218183406-31704.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Jonathan Turner" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218183406-31704.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/jonathan-turner-31704">
+                        <h4 class="color ng-binding">Jonathan Turner</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/jntrnr" target="_blank" class="icon-twitter" href="http://twitter.com/jntrnr"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Programming language geek working at Microsoft on TypeScript. Previously worked on Clang/LLVM at Apple and Chapel at Cray.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/typescript-and-angular-20">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">TypeScript and Angular 2.0</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 9:00 AM to 10:15 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401180921-6548.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Steve Souders" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401180921-6548.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/steve-souders-6548">
+                        <h4 class="color ng-binding">Steve Souders</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/Souders" target="_blank" class="icon-twitter" href="http://twitter.com/Souders"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/114676337053000557002/about" target="_blank" class="icon-gplus" href="https://plus.google.com/114676337053000557002/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Steve works at SpeedCurve on the interplay between performance and design. </p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/designperformance">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Design+Performance</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 4:40 PM to 5:40 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Dan Wahlin" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/dan-wahlin-14842">
+                        <h4 class="color ng-binding">Dan Wahlin</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/DanWahlin" target="_blank" class="icon-twitter" href="http://twitter.com/DanWahlin"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Google Developer Expert, MS Regional Director and MVP, Founder of Wahlin Consulting, Udemy and Pluralsight author.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/dan-and-john-bringing-their-view-on-the-latest-in-angular">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Dan and John Bringing Their View On The Latest In Angular</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 11:00 AM to Noon &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/angular-apps-in-0-to-60">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular Apps in 0 to 60</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 8:00 AM to 3:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom A</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218195858-31707.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="John Papa" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218195858-31707.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/john-papa-31707">
+                        <h4 class="color ng-binding">John Papa</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/John_Papa" target="_blank" class="icon-twitter" href="http://twitter.com/John_Papa"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/https://plus.google.com/+JohnPapa1//about" target="_blank" class="icon-gplus" href="https://plus.google.com/https://plus.google.com/+JohnPapa1//about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Google Developer Expert, MS Regional Director, Adventures in Angular podcast, &amp; Pluralsight author</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/dan-and-john-bringing-their-view-on-the-latest-in-angular">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Dan and John Bringing Their View On The Latest In Angular</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 11:00 AM to Noon &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217195300-30649.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Peter Bacon Darwin" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217195300-30649.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/peter-bacondarwin-30649">
+                        <h4 class="color ng-binding">Peter Bacon Darwin</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/petebd" target="_blank" class="icon-twitter" href="http://twitter.com/petebd"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+PeteBaconDarwin/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+PeteBaconDarwin/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">AngularJS 1.x Development Lead and Dad</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/nifty-shas-of-code-or-how-get-your-stuff-into-angular">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Nifty SHAs of Code (or how get your stuff into Angular)</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 1:30 PM to 2:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Ballroom ABC</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150330164034-32078.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Martin Gontovnikas" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150330164034-32078.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/martin-gontovnikas-32078">
+                        <h4 class="color ng-binding">Martin Gontovnikas</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/mgonto" target="_blank" class="icon-twitter" href="http://twitter.com/mgonto"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.facebook.com/gonto" target="_blank" class="icon-fb" href="http://www.facebook.com/gonto"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/mgonto" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/mgonto"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Developer Advocate at Auth0. JS Lover. Creator of Restangular, angular-jwt and other OSS projects.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/make-your-angular-app-a-maximum-security-prison">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Make Your Angular App a Maximum Security Prison</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom B</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/a-token-walks-into-a-spa">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">A Token Walks into a SPA…</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 3:30 PM to 4:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150224115156-30482.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Ben Drucker" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150224115156-30482.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/ben-drucker-30482">
+                        <h4 class="color ng-binding">Ben Drucker</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/bendrucker" target="_blank" class="icon-twitter" href="http://twitter.com/bendrucker"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.facebook.com/bendrucker" target="_blank" class="icon-fb" href="http://www.facebook.com/bendrucker"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/bendrucker" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/bendrucker"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">JavaScript developer and open source advocate. Founder of Valet.io.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/realtime-angular-with-firebase">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Realtime Angular with Firebase</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Crown Plaza Pen I&amp;II</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/reusable-angular-components-with-browserify">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Reusable Angular Components with Browserify</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 3:00 PM to 3:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217222749-31690.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="David East" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217222749-31690.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/david-east-31690">
+                        <h4 class="color ng-binding">David East</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/_davideast" target="_blank" class="icon-twitter" href="http://twitter.com/_davideast"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Developer Programs Engineer at Google. Full-time Firebase, Part-time Angular.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/migrating-to-angular2">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Migrating to Angular2</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 2:00 PM to 2:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/realtime-angular-with-firebase">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Realtime Angular with Firebase</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Crown Plaza Pen I&amp;II</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150304005103-31783.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Joe Eames" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150304005103-31783.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/joe-eames-31783">
+                        <h4 class="color ng-binding">Joe Eames</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/josepheames" target="_blank" class="icon-twitter" href="http://twitter.com/josepheames"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/JoeEames/about" target="_blank" class="icon-gplus" href="https://plus.google.com/JoeEames/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/joeeames" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/joeeames"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Pluralsight author, speaker, and organizer of ng-conf.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/directives-in-angular-1-2-win">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Directives in Angular: 1 + 2 = WIN</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 1:00 PM to 1:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Ballroom ABC</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041255-653.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Deborah Kurata" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041255-653.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/deborah-kurata-653">
+                        <h4 class="color ng-binding">Deborah Kurata</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/DeborahKurata" target="_blank" class="icon-twitter" href="http://twitter.com/DeborahKurata"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/www.linkedin.com/in/deborahkurata" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/www.linkedin.com/in/deborahkurata"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Independent consultant, developer, and mentor focusing on Windows and Web. Pluralsight author.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-2-forms">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular 2 Forms </b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 10:30 AM to 10:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Ballroom ABC</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/angular-line-of-business-applications-hands-on">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular Line of Business Applications Hands On</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Wednesday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Crown Plaza Pen I&amp;II</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071243-31800.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Scott Moss" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071243-31800.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/scott-moss-31800">
+                        <h4 class="color ng-binding">Scott Moss</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/scotups" target="_blank" class="icon-twitter" href="http://twitter.com/scotups"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+WilliamScottMoss/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+WilliamScottMoss/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Scott is an instructor and engineer with a passion for UI. He currently works at Udacity in SF.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/es6-workshop">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">ES6 Workshop</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Wednesday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom B</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/es6-workshop-repeat-of-wednesday-class">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">ES6 Workshop (Repeat Of Wednesday Class)</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/ng6-why-you-should-use-es6-with-angular-today">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">ng6 Why You Should Use ES6 with Angular Today</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 1:30 PM to 1:55 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041500-31679.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Sara Robinson" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041500-31679.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/sara-robinson-31679">
+                        <h4 class="color ng-binding">Sara Robinson</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/SRobTweets" target="_blank" class="icon-twitter" href="http://twitter.com/SRobTweets"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/sara-robinson/24/779/403" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/sara-robinson/24/779/403"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Sara is a Developer Advocate and realtime aficionado on the Firebase team at Google.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/build-awesome-apps-with-firebase-angular">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Build Awesome Apps with Firebase &amp; Angular</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 1:00 PM to 1:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071301-31799.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Kyle Simpson" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071301-31799.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/kyle-simpson-31799">
+                        <h4 class="color ng-binding">Kyle Simpson</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/getify" target="_blank" class="icon-twitter" href="http://twitter.com/getify"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/103205816011388489154/about" target="_blank" class="icon-gplus" href="https://plus.google.com/103205816011388489154/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/getify" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/getify"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Kyle Simpson is an Open Web Evangelist who's passionate about all things JavaScript. </p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/advanced-javascript-foundations">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Advanced JavaScript: Foundations</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Wednesday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/advanced-javascript-rethinking-async">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Advanced JavaScript: Rethinking Async</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Bayside AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150407053503-32414.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Andreas Argelius" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150407053503-32414.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/andreas-argelius-32414">
+                        <h4 class="color ng-binding">Andreas Argelius</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/aargelius" target="_blank" class="icon-twitter" href="http://twitter.com/aargelius"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Andreas is a core developer on Onsen UI, an Angular based mobile app framework.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-cordova-monaca-killer-mobile-app-development">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular + Cordova + Monaca = Killer mobile app development</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 3:00 PM to 3:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Ballroom ABC</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401183301-30676.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Demian Borba" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401183301-30676.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/demian-borba-30676">
+                        <h4 class="color ng-binding">Demian Borba</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/demianborba" target="_blank" class="icon-twitter" href="http://twitter.com/demianborba"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.facebook.com/demianborba" target="_blank" class="icon-fb" href="http://www.facebook.com/demianborba"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/demianborba/about" target="_blank" class="icon-gplus" href="https://plus.google.com/demianborba/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/demianborba" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/demianborba"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Developer Advocate at Braintree/PayPal focused on Web and UX, Surfer, Design Thinker and Father.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/making-money-with-phonegap-and-angular-apps">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Making money with Phonegap and Angular apps</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 3:30 PM to 4:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Ballroom ABC</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150518232916-32802.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Terence Carroll" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150518232916-32802.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/terence-carroll-32802">
+                        <h4 class="color ng-binding">Terence Carroll</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/thack" target="_blank" class="icon-twitter" href="http://twitter.com/thack"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/terencecarroll" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/terencecarroll"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Software Engineer that strives to build beautiful things. Loves Ionic Framework, iOS, and Android.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/building-mobile-apps-with-ionic-framework">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Building Mobile Apps with Ionic Framework</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Wednesday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Crown Plaza Pen III&amp;IV </span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/building-mobile-apps-with-ionic-framework-repeat">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Building Mobile Apps with Ionic Framework (Repeat)</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Crown Plaza Bayside</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150408064802-4087.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Doris Chen" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150408064802-4087.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/doris-chen-4087">
+                        <h4 class="color ng-binding">Doris Chen</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/doristchen" target="_blank" class="icon-twitter" href="http://twitter.com/doristchen"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Dr. Doris Chen is a Senior Technology Evangelist at Microsoft specialized in web technologies.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-go-mobile">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular: Go Mobile!</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 1:00 PM to 1:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402192513-32148.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Jeanie Chung" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402192513-32148.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/jeanie-chung-32148">
+                        <h4 class="color ng-binding">Jeanie Chung</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/jeanieshark" target="_blank" class="icon-twitter" href="http://twitter.com/jeanieshark"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Engineer currently working on the Foundation team at ZURB. Chapter Leader of GDI: Oakland. </p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/foundation-for-apps-integrating-angularjs-with-responsive-web-apps">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Foundation for Apps: Integrating AngularJS with Responsive Web Apps</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 1:30 PM to 2:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217204923-31688.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Andrew Connell" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217204923-31688.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/andrew-connell-31688">
+                        <h4 class="color ng-binding">Andrew Connell</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/andrewconnell" target="_blank" class="icon-twitter" href="http://twitter.com/andrewconnell"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/101544898474647443682/about" target="_blank" class="icon-gplus" href="https://plus.google.com/101544898474647443682/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/andrewconnell" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/andrewconnell"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Independent developer, speaker &amp; instructor focused on Azure, Office 365, Angular &amp; the client dev.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/building-office-365-spas-with-angular-and-cors">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Building Office 365 SPAs with Angular and CORS</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 11:00 AM to 11:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Ballroom ABC</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/build-secure-enterprise-angular-apps-that-leverage-various-microsoft-tech">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Build Secure Enterprise Angular Apps That Leverage Various Microsoft Tech</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Wednesday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom C</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150421191419-32182.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Justin Couto" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150421191419-32182.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/justin-couto-32182">
+                        <h4 class="color ng-binding">Justin Couto</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/JustinCouto" target="_blank" class="icon-twitter" href="http://twitter.com/JustinCouto"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/plus.google.com/101826411699635089342/about" target="_blank" class="icon-gplus" href="https://plus.google.com/plus.google.com/101826411699635089342/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://linkedin.com/in/JustinCouto" target="_blank" class="icon-linkedin" href="http://linkedin.com/in/JustinCouto"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Justin Couto is the founder and CEO of SoCreate.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angularjs-application-instances-on-demand">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">AngularJS Application Instances on Demand</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 10:30 AM to 10:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402193142-32038.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Rob Dodson" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402193142-32038.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/rob-dodson-32038">
+                        <h4 class="color ng-binding">Rob Dodson</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/rob_dodson" target="_blank" class="icon-twitter" href="http://twitter.com/rob_dodson"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/118271135596408598424/about" target="_blank" class="icon-gplus" href="https://plus.google.com/118271135596408598424/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Developer Advocate at Google working with the Polymer and Chrome teams - San Francisco, CA</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/componentize-your-app-with-polymer-elements">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Componentize your app with Polymer Elements</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 1:30 PM to 2:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150311175442-31791.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Tomomi Imura" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150311175442-31791.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/tomomi-imura-31791">
+                        <h4 class="color ng-binding">Tomomi Imura</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/girlie_mac" target="_blank" class="icon-twitter" href="http://twitter.com/girlie_mac"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+TomomiImura/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+TomomiImura/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/tomomi" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/tomomi"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Tomomi is an avid open web advocate, currently working as an evangelist at PubNub.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/dominating-shadow-dom">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Dominating Shadow DOM</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 3:00 PM to 3:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140513161026-225.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Jerry Kurata" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140513161026-225.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/jerry-kurata-225">
+                        <h4 class="color ng-binding">Jerry Kurata</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/https://plus.google.com/u/0/s/jerry%20kurata/about" target="_blank" class="icon-gplus" href="https://plus.google.com/https://plus.google.com/u/0/s/jerry%20kurata/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://www.linkedin.com/pub/jerry-kurata/2/1a0/6b2" target="_blank" class="icon-linkedin" href="https://www.linkedin.com/pub/jerry-kurata/2/1a0/6b2"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Jerry Kurata is a consultant specializing in full stack web and mobile solutions, and IoT.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/angular-line-of-business-applications-hands-on">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular Line of Business Applications Hands On</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Wednesday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Crown Plaza Pen I&amp;II</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150225143056-8830.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="John Lindquist" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150225143056-8830.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/john-lindquist-8830">
+                        <h4 class="color ng-binding">John Lindquist</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/johnlindquist" target="_blank" class="icon-twitter" href="http://twitter.com/johnlindquist"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/johnlindquist/about" target="_blank" class="icon-gplus" href="https://plus.google.com/johnlindquist/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">John is the head egg at egghead.io.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-2-speed-run">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular 2 Speed Run</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 1:00 PM to 1:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150608152258-34080.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Paul  Pardi" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150608152258-34080.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/paul-pardi-34080">
+                        <h4 class="color ng-binding">Paul  Pardi</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/PaulPardi" target="_blank" class="icon-twitter" href="http://twitter.com/PaulPardi"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">A Senior Content Publishing Manager focused on developer content at Microsoft Learning,  Paul has worked at Microsoft for 15 years, with a break to teach college for a couple of years.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/typescript-fundamentals">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">TypeScript Fundamentals</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Crown Plaza Pen III&amp;IV </span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217212410-31685.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Lukas Ruebbelke" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217212410-31685.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/lukas-ruebbelke-31685">
+                        <h4 class="color ng-binding">Lukas Ruebbelke</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/simpulton" target="_blank" class="icon-twitter" href="http://twitter.com/simpulton"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+LukasRuebbelke/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+LukasRuebbelke/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/lukas-ruebbelke" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/lukas-ruebbelke"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Developer. Hacker. Community backer. Author and blogger. Console logger. </p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/crazy-fast-prototyping-with-angularjs">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Crazy Fast Prototyping with AngularJS</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 11:00 AM to 11:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop --><span ng-if="link.workshop" class="ng-scope">
+    <a ui-sref="workshop(link.session.$stateParams())" href="/ng/workshop/2015sf/make-your-angular-app-a-maximum-security-prison">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Make Your Angular App a Maximum Security Prison</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Thursday 9:00 AM to 4:00 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom B</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150406163122-6220.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Justin Schwartzenberger" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150406163122-6220.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/justin-schwartzenberger-6220">
+                        <h4 class="color ng-binding">Justin Schwartzenberger</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/schwarty" target="_blank" class="icon-twitter" href="http://twitter.com/schwarty"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/105039402105484382301/about" target="_blank" class="icon-gplus" href="https://plus.google.com/105039402105484382301/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/JustinSchwartzenberger" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/JustinSchwartzenberger"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Justin is a Lead Engineer at SoCreate building screenwriting software and a Pluralsight author.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angularjs-application-instances-on-demand">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">AngularJS Application Instances on Demand</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 10:30 AM to 10:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327212017-32056.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Patrick Stapleton" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327212017-32056.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/patrick-stapleton-32056">
+                        <h4 class="color ng-binding">Patrick Stapleton</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/gdi2290" target="_blank" class="icon-twitter" href="http://twitter.com/gdi2290"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+PatrickStapleton/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+PatrickStapleton/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/gdi2290" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/gdi2290"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Creator of @AngularClass, Open-Source contributor, Previously @Keychain, @HackReactor, @Launch</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-2-server-rendering">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular 2 Server Rendering</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 10:30 AM to 10:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150605062811-34045.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Yuri Takheyev" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150605062811-34045.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/yuri-takheyev-34045">
+                        <h4 class="color ng-binding">Yuri Takheyev</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/qaramazov" target="_blank" class="icon-twitter" href="http://twitter.com/qaramazov"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Yuri Takhteyev is the CTO of Rangle.io, a JavaScript consulting firm based out of Toronto.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/hackstackjs-angularjs-applications-broken-apis-delivered-late">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">HackStack.js: AngularJS Applications Broken APIs Delivered Late</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 3:30 PM to 3:55 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150404021216-32162.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Travis Tidwell" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150404021216-32162.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/travis-tidwell-32162">
+                        <h4 class="color ng-binding">Travis Tidwell</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/softwaregnome" target="_blank" class="icon-twitter" href="http://twitter.com/softwaregnome"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.facebook.com/tappytrav" target="_blank" class="icon-fb" href="http://www.facebook.com/tappytrav"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+travist349/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+travist349/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/travistidwell" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/travistidwell"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">An Open Source enthusiast, a M.E.A.N developer, and hacker of all things.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/the-mean-stack-and-the-rise-of-the-machines">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">The M.E.A.N stack and the rise of the machines</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 3:30 PM to 4:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327172237-32051.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Jeff Whelpley" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327172237-32051.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/jeff-whelpley-32051">
+                        <h4 class="color ng-binding">Jeff Whelpley</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/jeffwhelpley" target="_blank" class="icon-twitter" href="http://twitter.com/jeffwhelpley"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.facebook.com/jeffwhelpley" target="_blank" class="icon-fb" href="http://www.facebook.com/jeffwhelpley"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+JeffWhelpley/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+JeffWhelpley/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/jeffwhelpley" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/jeffwhelpley"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Chief Architect at GetHuman, Angular Boston meetup co-organizer, AngularAir panelist</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/angular-2-server-rendering">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Angular 2 Server Rendering</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 10:30 AM to 10:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150310074304-11388.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Aysegul Yonet" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150310074304-11388.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/aysegul-yonet-11388">
+                        <h4 class="color ng-binding">Aysegul Yonet</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/AysegulYonet" target="_blank" class="icon-twitter" href="http://twitter.com/AysegulYonet"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/+AysegulYonet/about" target="_blank" class="icon-gplus" href="https://plus.google.com/+AysegulYonet/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/aysegulyonet" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/aysegulyonet"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Aysegul Yonet is a Software Engineer who is passionate about Data Visualization.</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/creating-d3-components-with-angular2-and-typescript">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Creating d3 Components with Angular2 and TypeScript</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 3:00 PM to 3:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150211122105-2000.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Ward Bell" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150211122105-2000.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/ward-bell-2000">
+                        <h4 class="color ng-binding">Ward Bell</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/wardbell" target="_blank" class="icon-twitter" href="http://twitter.com/wardbell"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Ward Bell is VP of Tech. at IdeaBlade makers of BreezeJS and Breeze#, MS MVP, Angular junkie</p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/get-mean-mongodb-express-angular-node">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Get MEAN! MongoDb + express + angular + node</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Monday 4:00 PM to 4:25 PM &nbsp;&nbsp;<span class="label label-danger ng-binding">Ballroom EFG_</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers --><li class="row ng-scope" ng-repeat="speaker in list.speakers">
+            <div class="col-sm-2">
+                <div class="speakers--image">
+                    <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140730152136-18686.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff" alt="Joonas Lehtinen" src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140730152136-18686.jpg?format=jpg&amp;height=400&amp;width=400&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                </div>
+            </div>
+            <div class="speakers--info col-sm-10">
+                <header class="heading small">
+                    <a ui-sref="speaker(speaker.$stateParams())" href="/ng/speaker/2015sf/joonas-lehtinen-18686">
+                        <h4 class="color ng-binding">Joonas Lehtinen</h4>
+                    </a>
+                    <div class="social colored">
+                        <speaker-social-icons speaker="speaker" class="ng-isolate-scope"><ul>
+                            <!-- ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://twitter.com/joonaslehtinen" target="_blank" class="icon-twitter" href="http://twitter.com/joonaslehtinen"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="https://plus.google.com/114976122739833533849/about" target="_blank" class="icon-gplus" href="https://plus.google.com/114976122739833533849/about"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks --><!-- ngIf: social.has(network) --><li ng-repeat="network in social.networks" ng-if="social.has(network)" class="ng-scope">
+                            <a ng-href="http://www.linkedin.com/in/joonaslehtinen" target="_blank" class="icon-linkedin" href="http://www.linkedin.com/in/joonaslehtinen"></a>
+                        </li><!-- end ngIf: social.has(network) --><!-- end ngRepeat: network in social.networks -->
+                        </ul>
+                        </speaker-social-icons>
+                    </div>
+                    <p class="heading--sub ng-binding">Dr. Joonas Lehtinen is the founder of Vaadin project, a Java-based framework for building awesome web UI easily in Java. </p>
+                </header>
+                <!-- ngIf: list.showSessions --><div class="speakers--info--detail ng-scope" ng-if="list.showSessions">
+                <ul class="list--default">
+                    <!-- ngRepeat: session in speaker.sessions --><li ng-repeat="session in speaker.sessions" class="ng-scope">
+                    <session-link session="session" class="ng-isolate-scope"><!-- ngIf: link.enabled --><span ng-if="link.enabled" class="ng-scope">
+  <!-- ngIf: link.workshop -->
+                        <!-- ngIf: !link.workshop --><span ng-if="!link.workshop" class="ng-scope">
+    <a ui-sref="session(link.session.$stateParams())" href="/ng/session/2015sf/vaadin-components-for-angularjs">
+        <ng-transclude>
+            <b class="ng-binding ng-scope">Vaadin Components for AngularJS</b>
+        </ng-transclude>
+    </a>
+  </span><!-- end ngIf: !link.workshop -->
+</span><!-- end ngIf: link.enabled -->
+                        <!-- ngIf: !link.enabled -->
+                    </session-link>
+              <span ng-show="list.showSessionDetails" class="ng-binding ng-hide">
+                Tuesday 11:00 AM to 11:55 AM &nbsp;&nbsp;<span class="label label-danger ng-binding">_Harbor AB</span>
+              </span>
+                </li><!-- end ngRepeat: session in speaker.sessions -->
+                </ul>
+            </div><!-- end ngIf: list.showSessions -->
+            </div>
+        </li><!-- end ngRepeat: speaker in list.speakers -->
+        </ul>
+
+
+
+
+    </div>
+    </div>
+    <!-- uiView: footer --><div ui-view="footer" class="ng-scope"><div id="sponsors" class="nav--section container ng-scope">
+        <div class="separator">
+            <span class="separator--icon icon-heart"></span>
+        </div>
+
+
+        <h2 class="type--lead">Premiere Sponsor</h2>
+        <ul class="sponsor--list">
+            <li class="sponsor sponsor--premiere">
+                <a href="http://rangle.io/" target="_blank"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg" alt="Rangle.io" src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"></a>
+            </li>
+            <!--<li class="sponsor sponsor&#45;&#45;premiere">-->
+            <!--<a ng-href="http://go.rangle.io/women?utm_campaign=Women%27s%20Initiative%20AngularU%20Contest&utm_medium=web&utm_source=AngularU%20Website%20News" target="_blank"><img class="sponsor&#45;&#45;img"-->
+            <!--ng-src="https://angularu.com/miscpages/AU-contest-au-ad.jpg"-->
+            <!--alt="Rangle.io Woman who code contest"></a>-->
+            <!--</li>-->
+        </ul>
+
+
+
+        <h2 class="type--lead">Gold Sponsors</h2>
+        <ul class="sponsor--list">
+            <li class="sponsor sponsor--gold">
+                <a ng-href="http://form.io/" target="_blank" href="http://form.io/"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/formio-logo-full.png" alt="formio" src="https://angularu.com/content/ng/angu/images/formio-logo-full.png"></a>
+            </li>
+            <li class="sponsor sponsor--gold">
+                <a ng-href="http://orcsweb.com/" target="_blank" href="http://orcsweb.com/"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/orcsweb.png" alt="Orcsweb" src="https://angularu.com/content/ng/angu/images/orcsweb.png"></a>
+            </li>
+
+            <li class="sponsor sponsor--gold">
+                <a ng-href="https://microsoft.com" target="_blank" href="https://microsoft.com"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/mslogo.png" alt="Microsoft" src="https://angularu.com/content/ng/angu/images/mslogo.png"></a>
+            </li>
+
+        </ul>
+
+        <h2 class="type--lead">Silver Sponsors</h2>
+        <ul class="sponsor--list">
+            <li class="sponsor sponsor--silver">
+                <a ng-href="http://pluralsight.com/" target="_blank" href="http://pluralsight.com/"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png" alt="Puralsight" src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png"></a>
+            </li>
+
+            <li class="sponsor sponsor--silver">
+                <a ng-href="https://developers.braintreepayments.com" target="_blank" href="https://developers.braintreepayments.com"><img class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png" alt="Braintree PayPal" src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png"></a>
+            </li>
+
+
+
+
+        </ul>
+
+
+
+        <h2 class="type--lead">Media Partners</h2>
+        <ul class="sponsor--list">
+            <li class="sponsor sponsor--silver">
+                <a ng-href="https://www.airpair.com/angularjs " target="_blank" href="https://www.airpair.com/angularjs"><img class="sponsor--img" ng-src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250" alt="AirPair" src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250"></a>
+            </li>
+        </ul>
+
+        <!--<ul class="sponsor&#45;&#45;list">-->
+        <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+        <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+        <!--</li>-->
+        <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+        <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+        <!--</li>-->
+        <!--</ul>-->
+
+        <!--<ul class="sponsor&#45;&#45;list">-->
+        <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+        <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+        <!--</li>-->
+        <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+        <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+        <!--</li>-->
+        <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+        <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+        <!--</li>-->
+        <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+        <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+        <!--</li>-->
+        <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+        <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+        <!--</li>-->
+        <!--</ul>-->
+
+        <div class="text-center">
+            <a ng-href="mailto:sponsor@angularu.com" class="btn btn-primary btn-lg" href="mailto:sponsor@angularu.com">Become a sponsor</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+        <footer class="footer ng-scope">
+            <div class="footer--top">
+
+                <div class="container">
+                    <div class="row">
+                        <!--<div class="col-md-7">-->
+                        <!--<div class="ping-tickets">-->
+                        <!--<label for="pingMeEmail2">Ping me when tickets go on sale:</label>-->
+                        <!--<div class="input-group">-->
+                        <!--<input type="text" class="form-control" id="pingMeEmail2" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">-->
+                        <!--<span class="input-group-btn">-->
+                        <!--<button ng-click="$scope.anguPingMe" class="btn btn-primary" type="button">OK</button>-->
+                        <!--</span>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <div class="col-md-12 footer--contact">
+                            <a ng-href="https://angularu.com/about/Privacy" href="https://angularu.com/about/Privacy">Privacy</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="https://angularu.com/about/CodeOfConduct" href="https://angularu.com/about/CodeOfConduct">Code of Conduct</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="mailto:service2015@angularu.com" href="mailto:service2015@angularu.com">Contact us</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <div class="social alt">
+                                <h4>Follow us on:</h4>
+                                <ul>
+                                    <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter" href="http://twitter.com/angularu"></a></li>
+                                    <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb" href="https://www.facebook.com/angularu"></a></li>
+                                    <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668" target="_blank" class="icon-gplus" href="https://plus.google.com/u/0/communities/100721362580915494668"></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sponsors">
+
+                <div class="container">
+                    <section class="sponsor--box ng-hide" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'}).length &gt; 0">
+                        <h3 class="uppercase">Platinum</h3>
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} -->
+                        </div>
+                    </section>
+
+                    <section class="sponsor--box ng-hide" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Gold'}).length &gt; 0">
+                        <h3 class="uppercase">Gold</h3>
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} -->
+                        </div>
+                    </section>
+
+                    <section class="sponsor--box ng-hide" ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Silver'}).length &gt; 0">
+                        <h3 class="uppercase">Silver</h3>
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} -->
+                        </div>
+                    </section>
+
+
+
+
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="//fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+</body></html>

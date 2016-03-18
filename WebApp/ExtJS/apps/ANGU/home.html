@@ -1,0 +1,1380 @@
+<!doctype html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Angular U (An Angular Conference)</title>
+    <meta name="description"
+          content="An Angular Conference Covering Angular 1.x, 2, TypeScript, ECMAScript 6, Web Components and More. Who’s Who of Angular Presenters and Its Future"/>
+    <link rel="apple-touch-icon" sizes="57x57"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-57x57.png?v=635636111958773961">
+    <link rel="apple-touch-icon" sizes="60x60"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-60x60.png?v=635636111958793967">
+    <link rel="apple-touch-icon" sizes="72x72"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-72x72.png?v=635636111958813973">
+    <link rel="apple-touch-icon" sizes="76x76"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-76x76.png?v=635636111958834093">
+    <link rel="apple-touch-icon" sizes="114x114"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-114x114.png?v=635636111958864035">
+    <link rel="apple-touch-icon" sizes="120x120"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-120x120.png?v=635636111958884242">
+    <link rel="apple-touch-icon" sizes="144x144"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-144x144.png?v=635636111958914014">
+    <link rel="apple-touch-icon" sizes="152x152"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-152x152.png?v=635636111958944059">
+    <link rel="apple-touch-icon" sizes="180x180"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/apple-touch-icon-180x180.png?v=635636111958964041">
+    <link rel="icon" type="image/png"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/favicon-32x32.png?v=635636111959124101" sizes="32x32">
+    <link rel="icon" type="image/png"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/android-chrome-192x192.png?v=635636111958723954"
+          sizes="192x192">
+    <link rel="icon" type="image/png"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/favicon-96x96.png?v=635636111959154106" sizes="96x96">
+    <link rel="icon" type="image/png"
+          href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/favicon-16x16.png?v=635636111959104103" sizes="16x16">
+    <link rel="manifest" href="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/manifest.json?v=635636111959174262">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage"
+          content="//d1n4bbuvjcnilu.cloudfront.net/Images/favicons/mstile-144x144.png?v=635636111959234284">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="/Content/ng/angu/styles/sosa-font-local.min.css"/>
+    <link href="//d1n4bbuvjcnilu.cloudfront.net/Content/ng/angu/styles/main.min.css?v=635755639088887806"
+          rel="stylesheet"/>
+</head>
+
+
+<body cz-shortcut-listen="true">
+<div ui-view="" ui-view-name="entry-view" class="ng-scope"><!-- uiView: header -->
+    <div ui-view="header" class="ng-scope">
+        <main-nav class="ng-scope ng-isolate-scope">
+            <nav class="nav">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+
+                            <page-nav open="nav.isOpen" class="ng-isolate-scope">
+                                <ul class="nav--list" ng-class="{'open': pages.open}">
+                                    <state-nav-item state="home" ng-if="pages.show('speakers')"
+                                                    class="ng-scope ng-isolate-scope">
+                                        <li ng-class="{active: link.active}">
+                                            <a ui-sref="speakers" href="/ng/speaker">
+                                                <ng-transclude><span class="ng-scope">
+    HOME
+  </span></ng-transclude>
+                                            </a>
+                                        </li>
+                                    </state-nav-item>
+                                    <!-- ngIf: pages.show('speakers') -->
+                                    <state-nav-item state="speakers" ng-if="pages.show('speakers')"
+                                                    class="ng-scope ng-isolate-scope">
+                                        <li ng-class="{active: link.active}">
+                                            <a ui-sref="speakers" href="/ng/speaker">
+                                                <ng-transclude><span class="ng-scope">
+    Speakers
+  </span></ng-transclude>
+                                            </a>
+                                        </li>
+                                    </state-nav-item><!-- end ngIf: pages.show('speakers') -->
+                                    <!-- ngIf: pages.show('sessions') -->
+                                    <state-nav-item state="sessions" ng-if="pages.show('sessions')"
+                                                    class="ng-scope ng-isolate-scope">
+                                        <li ng-class="{active: link.active}">
+                                            <a ui-sref="sessions" href="/ng/session">
+                                                <ng-transclude><span class="ng-scope">
+    Sessions
+  </span></ng-transclude>
+                                            </a>
+                                        </li>
+                                    </state-nav-item><!-- end ngIf: pages.show('sessions') -->
+                                    <!-- ngIf: pages.show('overview') -->
+                                    <state-nav-item state="overview" ng-if="pages.show('overview')"
+                                                    class="ng-scope ng-isolate-scope">
+                                        <li ng-class="{active: link.active}">
+                                            <a ui-sref="overview" href="/ng/overview">
+                                                <ng-transclude><span class="ng-scope">
+    Agenda
+  </span></ng-transclude>
+                                            </a>
+                                        </li>
+                                    </state-nav-item><!-- end ngIf: pages.show('overview') -->
+                                    <!-- ngIf: pages.show('pricing') -->
+                                    <!-- ngIf: pages.show('fun') -->
+                                    <state-nav-item state="fun" ng-if="pages.show('fun')"
+                                                    class="ng-scope ng-isolate-scope">
+                                        <li ng-class="{active: link.active}">
+                                            <a ui-sref="fun" href="/ng/fun">
+                                                <ng-transclude><span class="ng-scope">
+    Fun
+  </span></ng-transclude>
+                                            </a>
+                                        </li>
+                                    </state-nav-item><!-- end ngIf: pages.show('fun') -->
+
+
+
+
+                                </ul>
+                            </page-nav>
+                        </div>
+
+                    </div>
+                </div>
+            </nav>
+        </main-nav>
+        <div class="body-bag ng-scope">
+            <section class="hero" style="">
+                <h1 class="hero--heading"><span class="brand--logo angular"></span>Angular U</h1>
+                <!--<span ng-click="googleMap()" class="hero&#45;&#45;extra">June 22 to 25 2015 - Hyatt Regency, San&nbsp;Francisco Airport</span>-->
+            </section>
+        </div>
+    </div>
+    <!-- uiView:  -->
+    <div ui-view="" autoscroll="" class="ng-scope">
+        <div id="home" class="ng-scope">
+
+
+            <section class="nav--section live-feed">
+                <div class="container">
+
+
+
+
+                    <div class="row row-centered">
+                        <div class="col-md-10 col-centered">
+                            <h2 class="type--lead"><span class="type--color">Opening Keynote From the Angular Team June 22, 2015 (Brad Green, Igor Minar and Misko Hevery)</span>
+                            </h2>
+
+                            <div class="video-embed">
+                                <iframe ng-src="https://www.youtube.com/embed/videoseries?list=PLQrl6x_e_AZG0RdzIYVns4eGFxUEF61Lw"
+                                        width="431" height="263" frameborder="0" allowfullscregulpen=""
+                                        src="https://www.youtube.com/embed/videoseries?list=PLQrl6x_e_AZG0RdzIYVns4eGFxUEF61Lw"></iframe>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="nav--section live-feed ng-hide" ng-show="home.codecampyear.showLiveFeedCurrent">
+                <div class="container">
+                    <div class="row row-centered">
+                        <div class="col-md-10 col-centered">
+                            <h2 class="type--lead"><span class="type--color ng-binding">Angular U Live Feed</span></h2>
+
+                            <div class="video-embed">
+                                <iframe ng-src="https://www.youtube.com/embed/100-jwalo9o" width="431" height="263"
+                                        frameborder="0" allowfullscregulpen=""
+                                        src="https://www.youtube.com/embed/100-jwalo9o"></iframe>
+                                <!--<iframe ng-src="{{ home.iFrameSrc }}" width="431" height="263" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen >-->
+
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-sm-9 live-feed-info text-center ng-hide"
+                                     ng-show="home.showLiveFeedInfo">
+
+                                    <h3 class="ng-binding">Now playing: <span><a class="type--color ng-binding"
+                                                                                 target="_blank" ng-href=""></a></span>
+                                        by </h3>
+                                    <span ng-hide="true" class="label label-danger label-alt ng-hide">Live Feed and Talk Sponsored by <a
+                                            ng-href="" target="_blank" class="type--color ng-binding"></a></span>
+                                    <!--<p>{{ home.codecampyear.liveFeedSessionDescription }}</p><p>{{ home.codecampyear.liveFeedSessionDescription }}</p>-->
+                                    <p ng-bind-html="home.codecampyear.liveFeedSessionDescription"
+                                       class="ng-binding"></p>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="live-feed-share">
+                                        <h4 class="live-feed-share-title">Share this on: </h4>
+                                        <ul class="live-feed-share-list">
+                                            <li><a ng-href="http://twitter.com/angularu" target="_blank"
+                                                   class="icon-twitter" href="http://twitter.com/angularu"></a></li>
+                                            <li><a ng-href="https://www.facebook.com/angularu" target="_blank"
+                                                   class="icon-fb" href="https://www.facebook.com/angularu"></a></li>
+                                        </ul>
+
+                                        <a href="Videos">
+                                            <button class="btn btn-primary btn-full">View all the videos</button>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="container nav--section">
+
+                <div class="row row-centered">
+                    <div class="col-sm-12 col-centered">
+                        <h2 class="type--lead">
+                    <span class="type--color">Covering Angular 1.x, 2, <br>
+                    TypeScript, ECMAScript 6, Web Components and More</span>
+                        </h2>
+
+                        <!-- <h2 class="type--lead"><span class="type--color" ng-bind-html="home.title2"></span></h2> -->
+                        <!--<button class="btn btn-primary btn-lg center-block"   href='/angu/LiveFeedNotify'  >-->
+                        <!--&lt;!&ndash;Signup For The Live Feed of All Keynotes.&nbsp;&nbsp;&nbsp; Details Here</button>&ndash;&gt;-->
+                        <!--</span></h3>-->
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="content--sectionx">
+                    <h2 class="type--lead">Keynote Presenters</h2>
+                    <keynote-presenters presenters="speakers.keynotes" class="ng-isolate-scope">
+                        <div class="persona--container">
+                            <!-- ngRepeat: presenter in presenters -->
+                            <presenter ng-repeat="presenter in presenters" data="presenter" keynote="" image-width="290"
+                                       image-height="190" image-background="ffffff" class="ng-scope ng-isolate-scope">
+                                <div class="persona" ng-class="{small: !presenter.isKeynote}">
+                                    <div ng-class="{'persona--img': presenter.isKeynote}" class="persona--img">
+                                        <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218181456-31683.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff"
+                                             alt="Igor Minar"
+                                             src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218181456-31683.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                                    </div>
+                                    <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                           href="/ng/speaker/2015sf/igor-minar-31683">Igor Minar</a></h3>
+                                    <p class="ng-binding">
+                                        Igor is a software engineer at Google. He is the lead of the AngularJS,
+                                        practitioner of test driven development, open source enthusiast, hacker
+                                    </p>
+                                </div>
+                            </presenter><!-- end ngRepeat: presenter in presenters -->
+                            <presenter ng-repeat="presenter in presenters" data="presenter" keynote="" image-width="290"
+                                       image-height="190" image-background="ffffff" class="ng-scope ng-isolate-scope">
+                                <div class="persona" ng-class="{small: !presenter.isKeynote}">
+                                    <div ng-class="{'persona--img': presenter.isKeynote}" class="persona--img">
+                                        <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218182751-31682.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff"
+                                             alt="Misko Hevery"
+                                             src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218182751-31682.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                                    </div>
+                                    <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                           href="/ng/speaker/2015sf/misko-hevery-31682">Misko Hevery</a></h3>
+                                    <p class="ng-binding">
+                                        Miško Hevery is the creator of AngularJS framework. He has passion for making
+                                        complex things simple.
+                                    </p>
+                                </div>
+                            </presenter><!-- end ngRepeat: presenter in presenters -->
+                            <presenter ng-repeat="presenter in presenters" data="presenter" keynote="" image-width="290"
+                                       image-height="190" image-background="ffffff" class="ng-scope ng-isolate-scope">
+                                <div class="persona" ng-class="{small: !presenter.isKeynote}">
+                                    <div ng-class="{'persona--img': presenter.isKeynote}" class="persona--img">
+                                        <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226040941-31684.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff"
+                                             alt="Brad Green"
+                                             src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226040941-31684.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                                    </div>
+                                    <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                           href="/ng/speaker/2015sf/brad-green-31684">Brad Green</a></h3>
+                                    <p class="ng-binding">
+                                        Brad is an engineering director at Google where he manages development of the
+                                        AngularJS framework and Google's internal sales productivity products.
+                                    </p>
+                                </div>
+                            </presenter><!-- end ngRepeat: presenter in presenters -->
+                            <presenter ng-repeat="presenter in presenters" data="presenter" keynote="" image-width="290"
+                                       image-height="190" image-background="ffffff" class="ng-scope ng-isolate-scope">
+                                <div class="persona" ng-class="{small: !presenter.isKeynote}">
+                                    <div ng-class="{'persona--img': presenter.isKeynote}" class="persona--img">
+                                        <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131213212414-1124.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff"
+                                             alt="Douglas Crockford"
+                                             src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131213212414-1124.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                                    </div>
+                                    <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                           href="/ng/speaker/2015sf/douglas-crockford-1124">Douglas Crockford</a></h3>
+                                    <p class="ng-binding">
+                                        Douglas Crockford is an American computer programmer and entrepreneur who is
+                                        best known for his ongoing involvement in the development of the JavaScript
+                                        language and for having popularized the data format JSON.
+                                    </p>
+                                </div>
+                            </presenter><!-- end ngRepeat: presenter in presenters -->
+                            <presenter ng-repeat="presenter in presenters" data="presenter" keynote="" image-width="290"
+                                       image-height="190" image-background="ffffff" class="ng-scope ng-isolate-scope">
+                                <div class="persona" ng-class="{small: !presenter.isKeynote}">
+                                    <div ng-class="{'persona--img': presenter.isKeynote}" class="persona--img">
+                                        <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218183406-31704.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff"
+                                             alt="Jonathan Turner"
+                                             src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218183406-31704.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                                    </div>
+                                    <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                           href="/ng/speaker/2015sf/jonathan-turner-31704">Jonathan Turner</a></h3>
+                                    <p class="ng-binding">
+                                        Programming language geek working at Microsoft on TypeScript. Previously worked
+                                        on Clang/LLVM at Apple and Chapel at Cray.
+                                    </p>
+                                </div>
+                            </presenter><!-- end ngRepeat: presenter in presenters -->
+                            <presenter ng-repeat="presenter in presenters" data="presenter" keynote="" image-width="290"
+                                       image-height="190" image-background="ffffff" class="ng-scope ng-isolate-scope">
+                                <div class="persona" ng-class="{small: !presenter.isKeynote}">
+                                    <div ng-class="{'persona--img': presenter.isKeynote}" class="persona--img">
+                                        <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401180921-6548.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff"
+                                             alt="Steve Souders"
+                                             src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401180921-6548.jpg?format=jpg&amp;height=190&amp;width=290&amp;scale=both&amp;mode=pad&amp;Bgcolor=ffffff">
+                                    </div>
+                                    <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                           href="/ng/speaker/2015sf/steve-souders-6548">Steve Souders</a></h3>
+                                    <p class="ng-binding">
+                                        Steve works at SpeedCurve on the interplay between performance and design.
+                                    </p>
+                                </div>
+                            </presenter><!-- end ngRepeat: presenter in presenters -->
+                        </div>
+                    </keynote-presenters>
+                    <button ng-hide="home.showSpeakers" class="btn btn-primary btn-lg center-block ng-hide">Full Agenda
+                        Coming Soon
+                    </button>
+                </div>
+
+
+                <div class="content--section media" id="media">
+                    <div class="row">
+                        <div class="videos col-sm-6">
+                            <div class="video--main">
+                                <h3 class="video--main--title">
+              <span class="type--lead type--color ng-binding" style="font-weight: 700;font-size: 16px;">
+                Brad Green Talks Directives, Controllers become Components in Angular 2&nbsp;
+              </span>
+                                    <span ng-show="home.currentVideo.tweet.length > 0"
+                                          ng-bind-html="home.home.createTweetAnchor(home.currentVideo.tweet,false)"
+                                          class="ng-binding"></span>
+                                    <span ng-show="home.currentVideo.tweet.length > 0"
+                                          ng-bind-html="home.createTweetAnchor(home.currentVideo.tweet,true)"
+                                          class="ng-binding"><a
+                                            href="http://twitter.com/home?status=Check+Out+&quot;Brad+Green,+Igor+Minar+and+Misko+Havery+Talk+Angular+2&quot;+at+@AngularU+https://angularu.com/ng/session/2015sf/angular-2-roadmap-update+@bradlygreen"
+                                            target="_blank" class="icon-twitter"></a></span>
+                                </h3>
+
+                                <div class="video-embed">
+                                    <iframe ng-src="https://player.vimeo.com/video/128435293" width="431" height="263"
+                                            frameborder="0" webkitallowfullscreen="" mozallowfullscreen=""
+                                            allowfullscreen="" src="https://player.vimeo.com/video/128435293">
+                                    </iframe>
+                                </div>
+                            </div>
+                            <ul class="video--list">
+                                <!-- ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/128435293.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/128435293.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId --><span
+                                        ng-if="vid.vimeoId === home.currentVideo.vimeoId"
+                                        class="video--playing ng-scope">Playing</span>
+                                    <!-- end ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126991619.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126991619.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281527.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281527.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                                <li ng-repeat="vid in home.homePageVideos" class="ng-scope">
+                                    <a ng-href="#" ng-click="home.ChangeHomePageVideo(vid.vimeoId)" href="#">
+                                        <img ng-src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281528.jpg"
+                                             alt="" class=""
+                                             src="https://angularu.com/rpc/vimeo/thumbnail/105/77/126281528.jpg"></a>
+                                    <!-- ngIf: vid.vimeoId === home.currentVideo.vimeoId -->
+                                </li><!-- end ngRepeat: vid in home.homePageVideos -->
+                            </ul>
+
+                            <div class="text-center">
+                                <a ng-href="/Videos" href="/Videos">
+                                    <button class="btn btn-primary">More videos</button>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="news col-sm-6">
+                            <ul class="news--list">
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">June</span>
+                                        <span class="news-single--day">8</span>
+                                    </div>
+                                    <a ng-href="/News/2015sf/rangleios-women-who-code-contest-announced"
+                                       class="news-single--content"
+                                       href="/News/2015sf/rangleios-women-who-code-contest-announced">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Rangle.io's Women Who Code Contest Announced</h3>
+                                    </a>
+                                </li>
+
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">April</span>
+                                        <span class="news-single--day">15</span>
+                                    </div>
+                                    <a ng-href="/News/2015sf/brad-green-tells-us-what-to-expect-at-angular-team-keynote-at-angular-u"
+                                       class="news-single--content"
+                                       href="/News/2015sf/brad-green-tells-us-what-to-expect-at-angular-team-keynote-at-angular-u">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Brad Green Tells Us What to Expect at Angular
+                                            Team
+                                            Keynote at Angular U</h3>
+                                    </a>
+                                </li>
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">April</span>
+                                        <span class="news-single--day">7</span>
+                                    </div>
+                                    <a ng-href="/News/2015sf/honored-to-have-angular-u-on-angularjsorg-site"
+                                       class="news-single--content"
+                                       href="/News/2015sf/honored-to-have-angular-u-on-angularjsorg-site">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Honored To Have Angular U On AngularJS.Org
+                                            Site</h3>
+                                    </a>
+                                </li>
+                                <!--<li class="news-single">-->
+                                <!--<div class="news-single&#45;&#45;date">-->
+                                <!--<span class="news-single&#45;&#45;month">April</span>-->
+                                <!--<span class="news-single&#45;&#45;day">3</span>-->
+                                <!--</div>-->
+                                <!--<a href="/News/2015sf/announcing-steve-souders-keynote-at-angular-u"-->
+                                <!--class="news-single&#45;&#45;content">-->
+                                <!--<span class="news-single&#45;&#45;category">News</span>-->
+
+                                <!--<h3 class="news-single&#45;&#45;title">Announcing Steve Souders Keynote at Angular U</h3>-->
+                                <!--</a>-->
+                                <!--</li>-->
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">March</span>
+                                        <span class="news-single--day">29</span>
+                                    </div>
+                                    <a ng-href="http://weblogs.asp.net/dwahlin/introducing-the-angularu-conference"
+                                       class="news-single--content"
+                                       href="http://weblogs.asp.net/dwahlin/introducing-the-angularu-conference">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Introducing the Angular U Conference - Dan
+                                            Wahlin</h3>
+                                    </a>
+                                </li>
+                                <li class="news-single">
+                                    <div class="news-single--date">
+                                        <span class="news-single--month">March</span>
+                                        <span class="news-single--day">26</span>
+                                    </div>
+                                    <a ng-href="https://angularu.com/News/2015sf/why-am-i-so-excited-about-angular-u/"
+                                       class="news-single--content"
+                                       href="https://angularu.com/News/2015sf/why-am-i-so-excited-about-angular-u/">
+                                        <span class="news-single--category">News</span>
+
+                                        <h3 class="news-single--title">Why Am I so Excited about Angluar U - Peter
+                                            Kellner</h3>
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                            <!--<div class="text-center">-->
+                            <!--<button class="btn btn-primary">More news</button>-->
+                            <!--</div>-->
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social center-block">
+                    <h4>Do not want to miss anything? <a ng-href="https://angularu.com/angu/StayUpToDate"
+                                                        class="type--color"
+                                                        href="https://angularu.com/angu/StayUpToDate">Get
+                        email alerts</a> or follow us on: </h4>
+                    <ul>
+                        <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"
+                               href="http://twitter.com/angularu"></a></li>
+                        <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"
+                               href="https://www.facebook.com/angularu"></a></li>
+                        <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668" target="_blank"
+                               class="icon-gplus"
+                               href="https://plus.google.com/u/0/communities/100721362580915494668"></a></li>
+                    </ul>
+                </div>
+
+                <section class="content--section" ng-show="home.showSpeakers" id="en_speakerlist">
+                    <h2 class="type--lead">Speaker List</h2>
+                    <regular-presenters presenters="speakers.regular" class="ng-isolate-scope">
+                        <div class="row">
+                            <!-- ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Dan Wahlin"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20131216053752-14842.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/dan-wahlin-14842">Dan Wahlin</a></h3>
+                                        <p class="ng-binding">
+                                            Google Developer Expert, MS Regional Director and MVP, Founder of Wahlin
+                                            Consulting, Udemy and Pluralsight author.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218195858-31707.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="John Papa"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150218195858-31707.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/john-papa-31707">John Papa</a></h3>
+                                        <p class="ng-binding">
+                                            Google Developer Expert, MS Regional Director, Adventures in Angular
+                                            podcast, &amp; Pluralsight author
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217195300-30649.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Peter Bacon Darwin"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217195300-30649.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/peter-bacondarwin-30649">Peter Bacon Darwin</a>
+                                        </h3>
+                                        <p class="ng-binding">
+                                            AngularJS 1.x Development Lead and Dad
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150330164034-32078.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Martin Gontovnikas"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150330164034-32078.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/martin-gontovnikas-32078">Martin Gontovnikas</a>
+                                        </h3>
+                                        <p class="ng-binding">
+                                            Developer Advocate at Auth0. JS Lover. Creator of Restangular, angular-jwt
+                                            and other OSS projects.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150224115156-30482.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Ben Drucker"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150224115156-30482.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/ben-drucker-30482">Ben Drucker</a></h3>
+                                        <p class="ng-binding">
+                                            JavaScript developer and open source advocate. Founder of Valet.io.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217222749-31690.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="David East"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217222749-31690.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/david-east-31690">David East</a></h3>
+                                        <p class="ng-binding">
+                                            Developer Programs Engineer at Google. Full-time Firebase, Part-time
+                                            Angular.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150304005103-31783.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Joe Eames"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150304005103-31783.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/joe-eames-31783">Joe Eames</a></h3>
+                                        <p class="ng-binding">
+                                            Pluralsight author, speaker, and organizer of ng-conf.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071243-31800.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Scott Moss"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071243-31800.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/scott-moss-31800">Scott Moss</a></h3>
+                                        <p class="ng-binding">
+                                            Scott is an instructor and engineer with a passion for UI. He currently
+                                            works at Udacity in SF.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041255-653.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Deborah Kurata"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041255-653.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/deborah-kurata-653">Deborah Kurata</a></h3>
+                                        <p class="ng-binding">
+                                            Independent consultant, developer, and mentor focusing on Windows and Web.
+                                            Pluralsight author.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041500-31679.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Sara Robinson"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150226041500-31679.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/sara-robinson-31679">Sara Robinson</a></h3>
+                                        <p class="ng-binding">
+                                            Sara is a Developer Advocate and realtime aficionado on the Firebase team at
+                                            Google.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071301-31799.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Kyle Simpson"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150306071301-31799.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/kyle-simpson-31799">Kyle Simpson</a></h3>
+                                        <p class="ng-binding">
+                                            Kyle Simpson is an Open Web Evangelist who's passionate about all things
+                                            JavaScript.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140513161026-225.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Jerry Kurata"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140513161026-225.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/jerry-kurata-225">Jerry Kurata</a></h3>
+                                        <p class="ng-binding">
+                                            Jerry Kurata is a consultant specializing in full stack web, data science,
+                                            and IoT.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150311175442-31791.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Tomomi Imura"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150311175442-31791.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/tomomi-imura-31791">Tomomi Imura</a></h3>
+                                        <p class="ng-binding">
+                                            Tomomi is an avid open web advocate, currently working as an evangelist at
+                                            PubNub.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150421191419-32182.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Justin Couto"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150421191419-32182.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/justin-couto-32182">Justin Couto</a></h3>
+                                        <p class="ng-binding">
+                                            Justin Couto is the founder and CEO of SoCreate.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150407053503-32414.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Andreas Argelius"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150407053503-32414.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/andreas-argelius-32414">Andreas Argelius</a>
+                                        </h3>
+                                        <p class="ng-binding">
+                                            Andreas is a core developer on Onsen UI, an Angular based mobile app
+                                            framework.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402193142-32038.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Rob Dodson"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402193142-32038.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/rob-dodson-32038">Rob Dodson</a></h3>
+                                        <p class="ng-binding">
+                                            Developer Advocate at Google working with the Polymer and Chrome teams - San
+                                            Francisco, CA
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150225143056-8830.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="John Lindquist"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150225143056-8830.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/john-lindquist-8830">John Lindquist</a></h3>
+                                        <p class="ng-binding">
+                                            John is the head egg at egghead.io.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327172237-32051.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Jeff Whelpley"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327172237-32051.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/jeff-whelpley-32051">Jeff Whelpley</a></h3>
+                                        <p class="ng-binding">
+                                            Chief Architect at GetHuman, Angular Boston meetup co-organizer, AngularAir
+                                            panelist
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401183301-30676.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Demian Borba"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150401183301-30676.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/demian-borba-30676">Demian Borba</a></h3>
+                                        <p class="ng-binding">
+                                            Developer Advocate at Braintree/PayPal focused on Web and UX, Surfer, Design
+                                            Thinker and Father.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150518232916-32802.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Terence Carroll"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150518232916-32802.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/terence-carroll-32802">Terence Carroll</a></h3>
+                                        <p class="ng-binding">
+                                            Software Engineer that strives to build beautiful things. Loves Ionic
+                                            Framework, iOS, and Android.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150608152258-34080.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Paul  Pardi"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150608152258-34080.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/paul-pardi-34080">Paul Pardi</a></h3>
+                                        <p class="ng-binding">
+                                            A Senior Content Publishing Manager focused on developer content at
+                                            Microsoft Learning, Paul has worked at Microsoft for 15 years, with a break
+                                            to teach college for a couple of years.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150408064802-4087.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Doris Chen"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150408064802-4087.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/doris-chen-4087">Doris Chen</a></h3>
+                                        <p class="ng-binding">
+                                            Dr. Doris Chen is a Senior Technology Evangelist at Microsoft specialized in
+                                            web technologies.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217212410-31685.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Lukas Ruebbelke"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217212410-31685.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/lukas-ruebbelke-31685">Lukas Ruebbelke</a></h3>
+                                        <p class="ng-binding">
+                                            Developer. Hacker. Community backer. Author and blogger. Console logger.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150406163122-6220.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Justin Schwartzenberger"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150406163122-6220.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/justin-schwartzenberger-6220">Justin
+                                            Schwartzenberger</a></h3>
+                                        <p class="ng-binding">
+                                            Justin is a Lead Engineer at SoCreate building screenwriting software and a
+                                            Pluralsight author.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402192513-32148.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Jeanie Chung"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150402192513-32148.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/jeanie-chung-32148">Jeanie Chung</a></h3>
+                                        <p class="ng-binding">
+                                            Engineer currently working on the Foundation team at ZURB. Chapter Leader of
+                                            GDI: Oakland.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327212017-32056.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Patrick Stapleton"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150327212017-32056.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/patrick-stapleton-32056">Patrick Stapleton</a>
+                                        </h3>
+                                        <p class="ng-binding">
+                                            Creator of @AngularClass, Open-Source contributor, Previously @Keychain,
+                                            @HackReactor, @Launch
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150605062811-34045.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Yuri Takheyev"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150605062811-34045.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/yuri-takheyev-34045">Yuri Takheyev</a></h3>
+                                        <p class="ng-binding">
+                                            Yuri Takhteyev is the CTO of Rangle.io, a JavaScript consulting firm based
+                                            out of Toronto.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150404021216-32162.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Travis Tidwell"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150404021216-32162.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/travis-tidwell-32162">Travis Tidwell</a></h3>
+                                        <p class="ng-binding">
+                                            An Open Source enthusiast, a M.E.A.N developer, and hacker of all things.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217204923-31688.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Andrew Connell"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150217204923-31688.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/andrew-connell-31688">Andrew Connell</a></h3>
+                                        <p class="ng-binding">
+                                            Independent developer, speaker &amp; instructor focused on Azure, Office
+                                            365, Angular &amp; the client dev.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150310074304-11388.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Aysegul Yonet"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150310074304-11388.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/aysegul-yonet-11388">Aysegul Yonet</a></h3>
+                                        <p class="ng-binding">
+                                            Aysegul Yonet is a Software Engineer who is passionate about Data
+                                            Visualization.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140730152136-18686.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Joonas Lehtinen"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20140730152136-18686.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/joonas-lehtinen-18686">Joonas Lehtinen</a></h3>
+                                        <p class="ng-binding">
+                                            Dr. Joonas Lehtinen is the founder of Vaadin project, a Java-based framework
+                                            for building awesome web UI easily in Java.
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                            <div class="col-sm-6 ng-scope" ng-repeat="presenter in presenters">
+                                <presenter data="presenter" image-height="75" image-width="75" image-background="f3f2f2"
+                                           class="ng-isolate-scope">
+                                    <div class="persona small" ng-class="{small: !presenter.isKeynote}">
+                                        <div ng-class="{'persona--img': presenter.isKeynote}">
+                                            <img ng-src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150211122105-2000.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2"
+                                                 alt="Ward Bell"
+                                                 src="//d1n4bbuvjcnilu.cloudfront.net/attendeeimage/20150211122105-2000.jpg?format=jpg&amp;height=75&amp;width=75&amp;scale=both&amp;mode=pad&amp;Bgcolor=f3f2f2">
+                                        </div>
+                                        <h3><a ui-sref="speaker(presenter.$stateParams)" class="ng-binding"
+                                               href="/ng/speaker/2015sf/ward-bell-2000">Ward Bell</a></h3>
+                                        <p class="ng-binding">
+                                            Ward Bell is VP of Tech. at IdeaBlade makers of BreezeJS and Breeze#, MS
+                                            MVP, Angular junkie
+                                        </p>
+                                    </div>
+                                </presenter>
+                            </div><!-- end ngRepeat: presenter in presenters -->
+                        </div>
+                    </regular-presenters>
+                </section>
+
+                <div class="separator">
+                    <span ng-click="googleMap()" class="separator--icon icon-pin"></span>
+                </div>
+                <div id="venue" class="slider nav--section">
+                    <div class="slide--container">
+                        <ul rn-carousel="" slides="slides" class="slide--list">
+                            <li>
+                                <div class="slide">
+                                    <div class="slide--content">
+                                        <p>The conference takes place at the <span
+                                                class="type--color">Hyatt Regency</span>, a
+                                            short distance from the San&nbsp;Francisco Airport and within a short taxi
+                                            or Bart
+                                            ride from San&nbsp;Francisco Downtown.</p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="faq" class="nav--section container">
+                    <div class="separator">
+                        <span class="separator--icon icon-question">?</span>
+                    </div>
+
+                    <div>
+                        <h2 class="type--lead">FAQ</h2>
+                        <ul class="list--block list--centered">
+                            <!-- ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: Who organizes Angular U</strong></p>
+
+                                <p class="ng-binding">Answer: Angular U is a Silicon Valley Code Camp production that
+                                    includes Peter Kellner. Dan Wahlin leads efforts around Angular Content and Kevin
+                                    Nilson is responsible for other content.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: Can I attend the workshops if I am not attending
+                                    the main Monday and Tuesday conference?</strong></p>
+
+                                <p class="ng-binding">Answer: If there is space available in our workshops after our
+                                    conference fills up we will open up spaces to those who are not attending the main
+                                    conference.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: Once tickets sell out is there any chance I can
+                                    still get a ticket to the conference?</strong></p>
+
+                                <p class="ng-binding">Answer: Yes there is so please make sure you register and you will
+                                    be on our waiting list. If we have cancellations, we will open those spots up to our
+                                    waiting list and you will be notified with 24 hours to purchase the ticket.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: What is the format of the event?</strong></p>
+
+                                <p class="ng-binding">Answer: Monday will open with Keynotes from the Angular core team.
+                                    Specifically, Igor, Misko and Brad will open the show with some announcements and
+                                    Angular 2.0 updates. We will all be in the big ballroom at the SFO Hyatt on Monday.
+                                    On Tuesday, we will spend some of the day in one big group (for at least Douglas
+                                    Crockford’s Tuesday keynote) and other times we will split the room into 3 sections
+                                    and you will be able to choose which section to attend.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: When will you release your the full
+                                    schedule</strong></p>
+
+                                <p class="ng-binding">Answer: As soon as possible! As we have speakers committed, we
+                                    will put them on the site and about 1 month out from the event we will publish our
+                                    full schedule. If you sign up for Angular U notifications, you will receive email
+                                    updates and of course we will keep our site up to date.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: How can I be assured I will get a room at the
+                                    conference hotel?</strong></p>
+
+                                <p class="ng-binding">Answer: We have negotiated a large block of rooms at the SFO Hyatt
+                                    at a rate lower than their normal price. Make sure you reserve your room when you
+                                    get your conference ticket so that you can take advantage of this great rate. There
+                                    are a limited number of rooms allocated for us so make sure you book as soon as you
+                                    can.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: If after I’ve purchased my ticket I find that I
+                                    can not attend the event can I get my money back?</strong></p>
+
+                                <p class="ng-binding">Answer: No but you can transfer your ticket to someone else and
+                                    they can come in your place. You must notify us of that so we can be prepared for
+                                    them to come in your place.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: I’d like to speak at Angular U. Who should I
+                                    contact?</strong></p>
+
+                                <p class="ng-binding">Answer: Please enter your proposals at
+                                    https://angularu.com/angu/callforpapers</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: Can I bring my family?</strong></p>
+
+                                <p class="ng-binding">Answer: Yes. There are many things your family will enjoy in the
+                                    bay area. Tickets are also available for the party. We will be sending an email out
+                                    to all attendees with information on how to sign them up. The Hyatt is a quick bart
+                                    ride to San Francisco.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: What is my login name?</strong></p>
+
+                                <p class="ng-binding">Answer: If you signed up here for notifications, then your
+                                    username is your email. Since Angular U shares the membership database with Silicon
+                                    Valley Code Camp, you username is the same as it is for SVCC.</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: What is AngularU's Code Of Conduct?</strong></p>
+
+                                <p class="ng-binding">Answer: Our Code Of Conduct can be found on the link
+                                    https://angularu.com/about/CodeOfConduct
+                                </p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                            <li ng-repeat="faq in faqs" class="ng-scope">
+                                <p><strong class="ng-binding">Question: How can I get from SFO airport to the
+                                    conference?</strong></p>
+
+                                <p class="ng-binding">Answer: The hotel provides a complimentary shuttle that runs every
+                                    10 to 15 minutes to and from San Francisco International Airport 24 hours a day.
+                                    Details can be found on the link
+                                    http://sanfranciscoairport.hyatt.com/en/hotel/our-hotel/transportation.html</p>
+                            </li><!-- end ngRepeat: faq in faqs -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- uiView: footer -->
+    <div ui-view="footer" class="ng-scope">
+        <div id="sponsors" class="nav--section container ng-scope">
+            <div class="separator">
+                <span class="separator--icon icon-heart"></span>
+            </div>
+
+
+            <h2 class="type--lead">Premiere Sponsor</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--premiere">
+                    <a href="http://rangle.io/" target="_blank"><img class="sponsor--img"
+                                                                     ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"
+                                                                     alt="Rangle.io"
+                                                                     src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"></a>
+                </li>
+                <!--<li class="sponsor sponsor&#45;&#45;premiere">-->
+                <!--<a ng-href="http://go.rangle.io/women?utm_campaign=Women%27s%20Initiative%20AngularU%20Contest&utm_medium=web&utm_source=AngularU%20Website%20News" target="_blank"><img class="sponsor&#45;&#45;img"-->
+                <!--ng-src="https://angularu.com/miscpages/AU-contest-au-ad.jpg"-->
+                <!--alt="Rangle.io Woman who code contest"></a>-->
+                <!--</li>-->
+            </ul>
+
+
+            <h2 class="type--lead">Gold Sponsors</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="http://form.io/" target="_blank" href="http://form.io/"><img class="sponsor--img"
+                                                                                             ng-src="https://angularu.com/content/ng/angu/images/formio-logo-full.png"
+                                                                                             alt="formio"
+                                                                                             src="https://angularu.com/content/ng/angu/images/formio-logo-full.png"></a>
+                </li>
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="http://orcsweb.com/" target="_blank" href="http://orcsweb.com/"><img
+                            class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/orcsweb.png"
+                            alt="Orcsweb" src="https://angularu.com/content/ng/angu/images/orcsweb.png"></a>
+                </li>
+
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="https://microsoft.com" target="_blank" href="https://microsoft.com"><img
+                            class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/mslogo.png"
+                            alt="Microsoft" src="https://angularu.com/content/ng/angu/images/mslogo.png"></a>
+                </li>
+
+            </ul>
+
+            <h2 class="type--lead">Silver Sponsors</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="http://pluralsight.com/" target="_blank" href="http://pluralsight.com/"><img
+                            class="sponsor--img"
+                            ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png" alt="Puralsight"
+                            src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png"></a>
+                </li>
+
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="https://developers.braintreepayments.com" target="_blank"
+                       href="https://developers.braintreepayments.com"><img class="sponsor--img"
+                                                                            ng-src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png"
+                                                                            alt="Braintree PayPal"
+                                                                            src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png"></a>
+                </li>
+
+
+            </ul>
+
+
+            <h2 class="type--lead">Media Partners</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="https://www.airpair.com/angularjs " target="_blank"
+                       href="https://www.airpair.com/angularjs"><img class="sponsor--img"
+                                                                     ng-src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250"
+                                                                     alt="AirPair"
+                                                                     src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250"></a>
+                </li>
+            </ul>
+
+            <!--<ul class="sponsor&#45;&#45;list">-->
+            <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+            <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;gold">-->
+            <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--</ul>-->
+
+            <!--<ul class="sponsor&#45;&#45;list">-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--<li class="sponsor sponsor&#45;&#45;silver">-->
+            <!--<a ng-href="#"><img class="sponsor&#45;&#45;img" src="http://placekitten.com/g/300" alt=""></a>-->
+            <!--</li>-->
+            <!--</ul>-->
+
+            <div class="text-center">
+                <a ng-href="mailto:sponsor@angularu.com" class="btn btn-primary btn-lg"
+                   href="mailto:sponsor@angularu.com">Become a sponsor</a>
+            </div>
+        </div>
+
+
+        <footer class="footer ng-scope">
+            <div class="footer--top">
+
+                <div class="container">
+                    <div class="row">
+                        <!--<div class="col-md-7">-->
+                        <!--<div class="ping-tickets">-->
+                        <!--<label for="pingMeEmail2">Ping me when tickets go on sale:</label>-->
+                        <!--<div class="input-group">-->
+                        <!--<input type="text" class="form-control" id="pingMeEmail2" class="input-" ng-model="pingMeEmailAddress" name="pingMeEmail" placeholder="My Email">-->
+                        <!--<span class="input-group-btn">-->
+                        <!--<button ng-click="$scope.anguPingMe" class="btn btn-primary" type="button">OK</button>-->
+                        <!--</span>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <div class="col-md-12 footer--contact">
+                            <a ng-href="https://angularu.com/about/Privacy" href="https://angularu.com/about/Privacy">Privacy</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="https://angularu.com/about/CodeOfConduct"
+                               href="https://angularu.com/about/CodeOfConduct">Code of Conduct</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="mailto:service2015@angularu.com" href="mailto:service2015@angularu.com">Contact
+                                us</a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+    </div>
+</div>
+</body>
+</html>

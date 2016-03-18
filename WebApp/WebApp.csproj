@@ -1,0 +1,1250 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{34C50F90-32C4-4180-AA7D-97876C447137}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebApp</RootNamespace>
+    <AssemblyName>WebApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Glimpse.Core, Version=1.8.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glimpse.1.8.6\lib\net45\Glimpse.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Owin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.0.1\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.0.1\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.0.316.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\StackExchange.Redis.1.0.488\lib\net45\StackExchange.Redis.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\MultiTenantControllerAllowAttribute.cs" />
+    <Compile Include="Controllers\MultiTenantMvcController.cs" />
+    <Compile Include="Controllers\ExtJsRunController.cs" />
+    <Compile Include="Controllers\SessionController.cs" />
+    <Compile Include="Controllers\SpeakerController.cs" />
+    <Compile Include="Controllers\NgRunController.cs" />
+    <Compile Include="Controllers\TenantController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="ControllerWebApi\MultiTenantWebApiController.cs" />
+    <Compile Include="ControllerWebApi\AccountController.cs" />
+    <Compile Include="ControllerWebApi\SpeakerController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="HtmlHelperExtensions.cs" />
+    <Compile Include="ITCache.cs" />
+    <Compile Include="Migrations\201512140630036_InitialCreate.cs" />
+    <Compile Include="Migrations\201512140630036_InitialCreate.Designer.cs">
+      <DependentUpon>201512140630036_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201512140634446_sessions-and-speakers.cs" />
+    <Compile Include="Migrations\201512140634446_sessions-and-speakers.Designer.cs">
+      <DependentUpon>201512140634446_sessions-and-speakers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\Utils.cs" />
+    <Compile Include="Models\MultiTenantContext.cs" />
+    <Compile Include="Models\Session.cs" />
+    <Compile Include="Models\Speaker.cs" />
+    <Compile Include="Models\Tenant.cs" />
+    <Compile Include="MultTenantViewEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="TCache.cs" />
+    <Compile Include="TCacheInternal.cs" />
+    <Compile Include="TCacheRedis.cs" />
+    <Compile Include="TenantEdit.aspx.cs">
+      <DependentUpon>TenantEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="TenantEdit.aspx.designer.cs">
+      <DependentUpon>TenantEdit.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\ANGU\ng\app.js" />
+    <Content Include="Content\ANGU\ng\Content\fonts\sosa\sosa-regular-webfont.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\angularu_100x100.png" />
+    <Content Include="Content\ANGU\ng\Content\images\angularu_100x100blue.png" />
+    <Content Include="Content\ANGU\ng\Content\images\angularu_100x100bluenew.png" />
+    <Content Include="Content\ANGU\ng\Content\images\bg-slider-1.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\brad-green.png" />
+    <Content Include="Content\ANGU\ng\Content\images\douglas-crockford.png" />
+    <Content Include="Content\ANGU\ng\Content\images\hero-bg-la.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\hero-golden-gate-2.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\hero-golden-gate-3.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\hero-golden-gate-4.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\igor-minar.png" />
+    <Content Include="Content\ANGU\ng\Content\images\Jonathan-Turner-190.png" />
+    <Content Include="Content\ANGU\ng\Content\images\Jonathan-Turner-287.png" />
+    <Content Include="Content\ANGU\ng\Content\images\Jonathan_Turner.png" />
+    <Content Include="Content\ANGU\ng\Content\images\logo-angular.png" />
+    <Content Include="Content\ANGU\ng\Content\images\logo-angular.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\misko-hevery.png" />
+    <Content Include="Content\ANGU\ng\Content\images\page-loader.gif" />
+    <Content Include="Content\ANGU\ng\Content\images\pluralsight-141-90.png" />
+    <Content Include="Content\ANGU\ng\Content\images\Rangleio-logo-RGB.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\registration-simulation.png" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\dropbox.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\evernote.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\facebook.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\foursquare.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\github.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\google.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\instagram.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\linkedin.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\microsoft.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\social-buttons\twitter.svg" />
+    <Content Include="Content\ANGU\ng\Content\images\speaker-boulton.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speaker-leonidas.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speaker-spiekermann.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speakers\speaker-dodds.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speakers\speaker-gontovnikas.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speakers\speaker-smith.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speakers\speaker-tamplin.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speakers\speaker-van-weerdenburg.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\speakers\speaker-wahlin.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\sponsors-wall.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic1.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic10.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic11.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic12.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic2.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic3.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic4.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic5.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic6.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic7.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic8.jpg" />
+    <Content Include="Content\ANGU\ng\Content\images\tiles\pic9.jpg" />
+    <Content Include="Content\ANGU\ng\Content\styles\main-local.css" />
+    <Content Include="Content\ANGU\ng\Content\styles\main-local.min.css" />
+    <Content Include="Content\ANGU\ng\Content\styles\main.css" />
+    <Content Include="Content\ANGU\ng\Content\styles\main.min.css" />
+    <Content Include="Content\ANGU\ng\Content\styles\sosa-font-local.css" />
+    <Content Include="Content\ANGU\ng\Content\styles\sosa-font-local.min.css" />
+    <Content Include="Content\ANGU\ng\Content\styles\sosa-font.css" />
+    <Content Include="Content\ANGU\ng\Content\styles\sosa-font.min.css" />
+    <Content Include="Content\ANGU\ng\Content\style\site.css" />
+    <Content Include="Content\ANGU\ng\index.html" />
+    <Content Include="Content\ANGU\ng\templates.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\CSSC\Images\bg_header.jpg" />
+    <Content Include="Content\CSSC\Images\btn_search.png" />
+    <Content Include="Content\CSSC\Images\CrockfordTeaching2013.jpg" />
+    <Content Include="Content\CSSC\Images\homepage_banner.jpg" />
+    <Content Include="Content\CSSC\Images\logo.png" />
+    <Content Include="Content\CSSC\Images\sprites.png" />
+    <Content Include="Content\CSSC\Images\svcc-promo-mobile.jpg" />
+    <Content Include="Content\CSSC\Images\svcc-promo.jpg" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\images\bx_loader.gif" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\images\controls.png" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\jquery.bxslider.css" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\jquery.bxslider.js" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\jquery.bxslider.min.js" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\plugins\jquery.easing.1.3.js" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\plugins\jquery.fitvids.js" />
+    <Content Include="Content\CSSC\JavaScript\jquery-1.10.1.js" />
+    <Content Include="Content\CSSC\JavaScript\jquery-1.10.1.min.js" />
+    <Content Include="Content\CSSC\JavaScript\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Content\CSSC\JavaScript\main-cssc.js" />
+    <Content Include="Content\CSSC\JavaScript\tappize\tappize.js" />
+    <Content Include="Content\CSSC\JavaScript\tappize\tappize.min.js" />
+    <Content Include="Content\CSSC\JavaScript\validate\jquery.validate.js" />
+    <Content Include="Content\CSSC\JavaScript\validate\jquery.validate.min.js" />
+    <Content Include="Content\CSSC\JavaScript\validate\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\CSSC\JavaScript\validate\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\CSSC\site-cssc-relative.css" />
+    <Content Include="Content\Images\Speakers\Speaker-100-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10121-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10249-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10254-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10257-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10258-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10267-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10271-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10273-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10286-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10295-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1032-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10357-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10376-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10392-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10394-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10398-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1048-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10494-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10569-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-106-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10607-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10614-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10622-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10645-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10716-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1072-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10721-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10738-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1078-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10800-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10801-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10803-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1081-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10810-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10812-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1083-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10871-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10904-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10913-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10941-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10983-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-10984-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-110-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11040-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11064-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11090-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11098-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11102-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11106-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11113-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11140-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11212-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1124-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11243-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1128-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11306-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11314-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11326-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11333-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11334-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11337-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11346-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11351-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11366-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11370-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11374-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11388-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11401-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11405-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11477-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11501-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11514-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11541-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11573-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11589-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11625-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1164-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11661-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11709-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11711-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11752-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11757-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1177-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-11831-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-12015-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1206-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-12077-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1211-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1212-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1214-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1221-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1222-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1225-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-123-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-12415-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1252-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-12586-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-12591-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1269-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1273-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1278-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-12811-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-12960-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-13070-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-13162-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-13354-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1343-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1347-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1357-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-14-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1402-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1405-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1415-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1419-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1426-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1427-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1428-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1430-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1434-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1442-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1453-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-14842-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-14918-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1497-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1499-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-15072-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-15075-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1508-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-15080-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-15105-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1514-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1533-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-155-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-159-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-160-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16174-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16189-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1620-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16209-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16239-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16243-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16252-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16283-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16333-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16334-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-16339-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1661-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-169-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-170-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-172-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1725-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17347-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17360-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17364-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17385-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17401-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17414-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17416-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17424-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17449-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17453-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17454-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17461-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17473-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-17478-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-177-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18562-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18583-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18590-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18613-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18621-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18624-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18642-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18653-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18656-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18686-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18687-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-187-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18713-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18752-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18763-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18773-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18792-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18802-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18805-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-18820-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-194-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1978-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-19824-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-19830-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-19831-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-19855-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-19859-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-19920-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-1995-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2000-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2002-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2012-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-203-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2039-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2059-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-20951-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-20976-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-20985-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21030-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21033-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21045-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21098-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21117-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21118-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21124-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21132-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21146-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21151-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21162-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21283-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21404-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21405-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21406-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21408-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-21436-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-22-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-225-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-24588-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2505-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-251-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-27993-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-28103-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2845-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-28462-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2852-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2867-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2872-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2875-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2884-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2885-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2888-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-29179-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-29199-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2920-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2925-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2933-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2951-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2974-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2976-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-2978-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3009-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3013-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3019-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-302-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3033-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-30461-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-30466-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-30473-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-30482-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-30649-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-30656-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-30676-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3073-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3080-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3132-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3133-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3152-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3153-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3160-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31679-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31682-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31683-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31684-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31685-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31688-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31690-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31704-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31707-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31779-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31783-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31791-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31799-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31800-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31982-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-31998-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32038-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32051-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32056-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32070-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32078-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3211-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32148-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32162-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32182-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3224-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32414-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3252-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32604-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3264-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32802-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-32901-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3295-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3299-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3305-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3319-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3345-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3346-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3347-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-337-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-34045-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-34080-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-341-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3415-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3483-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-352-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3605-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36058-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3608-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36101-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3611-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36147-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36173-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36196-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36201-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36206-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36214-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36216-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36217-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36223-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36228-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36253-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-36290-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-370-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3701-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37321-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37328-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37331-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-374-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37519-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37582-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37594-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37622-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37623-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37645-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3768-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37702-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37707-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37711-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37723-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-378-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37813-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37818-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37868-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37892-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37898-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3790-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37923-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-37984-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3809-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-385-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39006-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39060-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39062-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39080-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39097-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-391-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39108-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39124-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3927-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39399-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-39635-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3968-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3980-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3983-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3984-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3986-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-3987-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4004-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4014-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4037-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4038-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4054-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4079-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4080-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4087-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4091-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4092-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-410-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4100-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4108-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-411-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4121-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4124-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4128-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4129-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4135-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4138-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4190-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4219-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4231-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4236-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4241-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-426-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4267-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4276-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4281-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4291-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4301-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4304-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4327-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-435-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4361-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4364-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4370-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4387-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-439-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4395-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4401-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4409-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4410-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4413-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4421-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4427-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4432-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4442-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4456-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4475-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4478-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4493-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4500-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4503-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4508-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4509-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-451-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4512-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4519-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4524-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4540-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4553-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4578-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-462-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4661-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4674-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4720-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-473-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4732-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4734-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4761-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4774-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4795-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-4816-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-482-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-488-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-490-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5003-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-502-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-506-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5062-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5083-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-509-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5101-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5111-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5159-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5272-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-529-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5310-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5351-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5364-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5373-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-539-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5443-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-545-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-550-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-551-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-552-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5594-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-565-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-571-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-572-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5750-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-579-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-583-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5890-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-592-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5988-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5989-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5995-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-5996-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6005-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6011-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-604-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6041-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6053-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6056-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6061-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6072-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6119-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6125-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-613-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6145-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6163-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6176-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6180-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6189-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-620-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6214-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6220-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6229-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6236-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6258-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6264-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6278-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6291-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6300-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6326-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6353-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6363-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6379-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6395-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6402-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6414-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6417-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6437-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6444-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6449-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6459-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6464-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6466-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6478-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6482-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6484-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6489-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6492-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6494-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6498-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-65-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6508-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6517-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6518-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6528-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-653-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6539-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6542-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6547-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6548-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6558-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6560-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6565-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6575-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6582-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6584-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6619-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-672-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6753-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6765-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6778-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-6788-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-697-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-707-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-714-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7159-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7164-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7175-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-718-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-72-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7248-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-731-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7352-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-753-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7594-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7600-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-777-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7840-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7856-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7981-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7983-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7989-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-7997-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-80-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8006-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8068-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8087-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8127-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8135-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8177-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8205-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-821-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8211-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8223-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8228-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-823-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8235-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8239-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8285-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8286-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8294-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8299-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8301-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8331-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8340-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8345-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8362-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8367-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-837-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8412-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8431-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8473-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8477-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8479-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8480-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8482-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8502-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8503-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8504-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8509-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8518-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8545-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8553-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8573-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8575-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-858-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8583-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8586-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8590-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8609-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8617-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8620-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8629-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8633-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8637-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8639-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8641-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8645-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8654-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8655-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8658-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8659-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8661-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8664-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8667-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8668-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8679-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8684-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8688-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8689-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8696-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8701-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8704-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8705-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8740-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8760-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8764-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8794-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8797-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8830-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-888-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-890-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-893-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8940-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8966-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-8984-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-9018-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-903-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-907-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-913-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-921-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-9274-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-928-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-946-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-953-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-9576-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-961-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-966-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-967-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-9715-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-9727-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-9952-75.jpg" />
+    <Content Include="Content\Images\Speakers\Speaker-9970-75.jpg" />
+    <Content Include="Content\JavaScript\bxslider\images\bx_loader.gif" />
+    <Content Include="Content\JavaScript\bxslider\images\controls.png" />
+    <Content Include="Content\JavaScript\bxslider\jquery.bxslider.css" />
+    <Content Include="Content\JavaScript\bxslider\jquery.bxslider.js" />
+    <Content Include="Content\JavaScript\bxslider\jquery.bxslider.min.js" />
+    <Content Include="Content\JavaScript\bxslider\plugins\jquery.easing.1.3.js" />
+    <Content Include="Content\JavaScript\bxslider\plugins\jquery.fitvids.js" />
+    <Content Include="Content\JavaScript\jquery-1.10.1.js" />
+    <Content Include="Content\JavaScript\jquery-1.10.1.min.js" />
+    <Content Include="Content\JavaScript\jquery-migrate-1.2.1.min.js" />
+    <Content Include="Content\JavaScript\main-cssc.js" />
+    <Content Include="Content\JavaScript\tappize\tappize.js" />
+    <Content Include="Content\JavaScript\tappize\tappize.min.js" />
+    <Content Include="Content\JavaScript\validate\jquery.validate.js" />
+    <Content Include="Content\JavaScript\validate\jquery.validate.min.js" />
+    <Content Include="Content\JavaScript\validate\jquery.validate.unobtrusive.js" />
+    <Content Include="Content\JavaScript\validate\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Content\SVCC\Images\1.gif" />
+    <Content Include="Content\SVCC\Images\arrow.png" />
+    <Content Include="Content\SVCC\Images\arrow_down.png" />
+    <Content Include="Content\SVCC\Images\arrow_hover.png" />
+    <Content Include="Content\SVCC\Images\article-img.jpg" />
+    <Content Include="Content\SVCC\Images\article-map.jpg" />
+    <Content Include="Content\SVCC\Images\avatar-mark.png" />
+    <Content Include="Content\SVCC\Images\avatar-meduim.png" />
+    <Content Include="Content\SVCC\Images\avatar-peter.png" />
+    <Content Include="Content\SVCC\Images\avatar-small.png" />
+    <Content Include="Content\SVCC\Images\became.jpg" />
+    <Content Include="Content\SVCC\Images\bg-iradio.png" />
+    <Content Include="Content\SVCC\Images\bg-kidsheader.png" />
+    <Content Include="Content\SVCC\Images\bg.jpg" />
+    <Content Include="Content\SVCC\Images\bullet.jpg" />
+    <Content Include="Content\SVCC\Images\daysCountdownReflection.png" />
+    <Content Include="Content\SVCC\Images\evergreenoverviewmap.png" />
+    <Content Include="Content\SVCC\Images\featured.jpg" />
+    <Content Include="Content\SVCC\Images\floating-panel-bg.png" />
+    <Content Include="Content\SVCC\Images\glyphicons-halflings-white.png" />
+    <Content Include="Content\SVCC\Images\glyphicons-halflings.png" />
+    <Content Include="Content\SVCC\Images\green.png" />
+    <Content Include="Content\SVCC\Images\header-bg.jpg" />
+    <Content Include="Content\SVCC\Images\header-bg.png" />
+    <Content Include="Content\SVCC\Images\header-submenu-bg.png" />
+    <Content Include="Content\SVCC\Images\ico_featured-meetup.png" />
+    <Content Include="Content\SVCC\Images\ico_featured.png" />
+    <Content Include="Content\SVCC\Images\kids-badge.png" />
+    <Content Include="Content\SVCC\Images\middle-info.png" />
+    <Content Include="Content\SVCC\Images\navstrip.gif" />
+    <Content Include="Content\SVCC\Images\orange-header-bg.png" />
+    <Content Include="Content\SVCC\Images\orange-navstrip.gif" />
+    <Content Include="Content\SVCC\Images\page-loader.gif" />
+    <Content Include="Content\SVCC\Images\premiere-sponsors-ribbon.png" />
+    <Content Include="Content\SVCC\Images\search-btn.png" />
+    <Content Include="Content\SVCC\Images\search2-btn.png" />
+    <Content Include="Content\SVCC\Images\select-icon.png" />
+    <Content Include="Content\SVCC\Images\showSpecial.jpg" />
+    <Content Include="Content\SVCC\Images\sidebarLeft-sponsor-bg.png" />
+    <Content Include="Content\SVCC\Images\silicon-valley-code-camp.png" />
+    <Content Include="Content\SVCC\Images\social-share-small.png" />
+    <Content Include="Content\SVCC\Images\speaker-avatar-sample.png" />
+    <Content Include="Content\SVCC\Images\sprite-share.png" />
+    <Content Include="Content\SVCC\Images\sprite-social.png" />
+    <Content Include="Content\SVCC\Images\sprite-socialbig.png" />
+    <Content Include="Content\SVCC\Images\sprites-icons.png" />
+    <Content Include="Content\SVCC\Images\sprites.png" />
+    <Content Include="Content\SVCC\Images\supporting-sponsors-ribbon.png" />
+    <Content Include="Content\SVCC\Images\testimonial.png" />
+    <Content Include="Content\SVCC\Images\top-info.png" />
+    <Content Include="Content\SVCC\Images\twitter-feed.png" />
+    <Content Include="Content\SVCC\Images\twitter-icon.png" />
+    <Content Include="Content\SVCC\ng\app.js" />
+    <Content Include="Content\SVCC\ng\Content\fonts\sosa\sosa-regular-webfont.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\angularu_100x100.png" />
+    <Content Include="Content\SVCC\ng\Content\images\angularu_100x100blue.png" />
+    <Content Include="Content\SVCC\ng\Content\images\angularu_100x100bluenew.png" />
+    <Content Include="Content\SVCC\ng\Content\images\bg-slider-1.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\brad-green.png" />
+    <Content Include="Content\SVCC\ng\Content\images\douglas-crockford.png" />
+    <Content Include="Content\SVCC\ng\Content\images\hero-bg-la.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\hero-golden-gate-2.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\hero-golden-gate-3.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\hero-golden-gate-4.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\igor-minar.png" />
+    <Content Include="Content\SVCC\ng\Content\images\Jonathan-Turner-190.png" />
+    <Content Include="Content\SVCC\ng\Content\images\Jonathan-Turner-287.png" />
+    <Content Include="Content\SVCC\ng\Content\images\Jonathan_Turner.png" />
+    <Content Include="Content\SVCC\ng\Content\images\logo-angular.png" />
+    <Content Include="Content\SVCC\ng\Content\images\logo-angular.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\misko-hevery.png" />
+    <Content Include="Content\SVCC\ng\Content\images\page-loader.gif" />
+    <Content Include="Content\SVCC\ng\Content\images\pluralsight-141-90.png" />
+    <Content Include="Content\SVCC\ng\Content\images\Rangleio-logo-RGB.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\registration-simulation.png" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\dropbox.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\evernote.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\facebook.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\foursquare.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\github.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\google.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\instagram.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\linkedin.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\microsoft.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\social-buttons\twitter.svg" />
+    <Content Include="Content\SVCC\ng\Content\images\speaker-boulton.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speaker-leonidas.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speaker-spiekermann.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speakers\speaker-dodds.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speakers\speaker-gontovnikas.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speakers\speaker-smith.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speakers\speaker-tamplin.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speakers\speaker-van-weerdenburg.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\speakers\speaker-wahlin.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\sponsors-wall.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic1.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic10.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic11.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic12.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic2.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic3.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic4.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic5.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic6.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic7.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic8.jpg" />
+    <Content Include="Content\SVCC\ng\Content\images\tiles\pic9.jpg" />
+    <Content Include="Content\SVCC\ng\Content\styles\main-local.css" />
+    <Content Include="Content\SVCC\ng\Content\styles\main-local.min.css" />
+    <Content Include="Content\SVCC\ng\Content\styles\main.css" />
+    <Content Include="Content\SVCC\ng\Content\styles\main.min.css" />
+    <Content Include="Content\SVCC\ng\Content\styles\sosa-font-local.css" />
+    <Content Include="Content\SVCC\ng\Content\styles\sosa-font-local.min.css" />
+    <Content Include="Content\SVCC\ng\Content\styles\sosa-font.css" />
+    <Content Include="Content\SVCC\ng\Content\styles\sosa-font.min.css" />
+    <Content Include="Content\SVCC\ng\Content\style\site.css" />
+    <Content Include="Content\SVCC\ng\index.html" />
+    <Content Include="Content\SVCC\ng\templates.js" />
+    <Content Include="Content\SVCC\readme.txt" />
+    <Content Include="Content\SVCC\style\site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Content\SVCC\ng\Content\fonts\sosa\sosa-regular-webfont.eot" />
+    <Content Include="Content\SVCC\ng\Content\fonts\sosa\sosa-regular-webfont.ttf" />
+    <Content Include="Content\SVCC\ng\Content\fonts\sosa\sosa-regular-webfont.woff" />
+    <Content Include="Content\SVCC\ng\Content\images\PluralsightLogoMay2015.eps" />
+    <Content Include="Content\ANGU\ng\Content\fonts\sosa\sosa-regular-webfont.eot" />
+    <Content Include="Content\ANGU\ng\Content\fonts\sosa\sosa-regular-webfont.ttf" />
+    <Content Include="Content\ANGU\ng\Content\fonts\sosa\sosa-regular-webfont.woff" />
+    <Content Include="Content\ANGU\ng\Content\images\PluralsightLogoMay2015.eps" />
+    <Content Include="Content\CSSC\JavaScript\bxslider\readme.md" />
+    <Content Include="Content\JavaScript\bxslider\readme.md" />
+    <None Include="Properties\PublishProfiles\ElasticBeanStalk1.pubxml" />
+    <None Include="Properties\PublishProfiles\kellnermt - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\kellnermt-onpremise.pubxml" />
+    <None Include="Properties\PublishProfiles\kellnermultitenant - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\MultiTenant1 - Web Deploy.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="TenantEdit.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Tenant\Index.cshtml" />
+    <EmbeddedResource Include="session.json" />
+    <EmbeddedResource Include="speaker.json" />
+    <Content Include="Views\SVCC\Speaker\Index.cshtml" />
+    <Content Include="Views\Speaker\Index.cshtml" />
+    <Content Include="Views\ANGU\Speaker\Index.cshtml" />
+    <Content Include="Views\ANGU\Shared\_Layout.cshtml" />
+    <Content Include="Views\SVCC\Shared\_Layout.cshtml" />
+    <Content Include="Views\SVCC\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\SVCC\Speaker\Detail.cshtml" />
+    <Content Include="Views\SVCC\Session\Index.cshtml" />
+    <Content Include="Views\SVCC\Session\Detail.cshtml" />
+    <Content Include="Views\SVCC\Home\Index.cshtml" />
+    <Content Include="Views\CSSC\Home\CodeOfConduct.cshtml" />
+    <Content Include="Views\CSSC\Home\Index.cshtml" />
+    <Content Include="Views\CSSC\Shared\_Layout.cshtml" />
+    <Content Include="Views\CSSC\Shared\_TopMenu.cshtml" />
+    <Content Include="Views\CSSC\Session\Detail.cshtml" />
+    <Content Include="Views\SVCC\NgXXX\Index.cshtml" />
+    <Content Include="Views\NgRun\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\SVCC\Fonts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201512140630036_InitialCreate.resx">
+      <DependentUpon>201512140630036_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201512140634446_sessions-and-speakers.resx">
+      <DependentUpon>201512140634446_sessions-and-speakers.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>1318</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:1318/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

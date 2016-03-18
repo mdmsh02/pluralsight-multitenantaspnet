@@ -1,0 +1,50 @@
+﻿@model WebApp.Controllers.NgData
+
+@{
+    Layout = null;
+}
+
+<!doctype html>
+<html ng-app="MTApp">
+<head>
+    <base href="/ngrun/">   <!--required for html5mode-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>MultiTenantApp</title>
+
+    <!--<link rel="stylesheet" href="/Content/ANGU/styles/sosa-font-local.css" />-->
+    <!--<link href="/Content/ANGU/styles/main.css"  rel="stylesheet" />-->
+
+    <link rel="stylesheet" href="/Content/@Model.TenantName/ng/Content/style/site.css" />
+
+    <script src="/Content/@Model.TenantName/ng/app.js"></script>
+    <script src="/Content/@Model.TenantName/ng/templates.js"></script>
+
+   
+
+    <script type="text/javascript">
+        (function() {
+            'use strict';
+
+            var configData = {
+                tenantName: '@Model.TenantName',
+                TopTitle: '@Model.TopTitle',
+                ShowSpeakerPage: '@Model.ShowSpeakerPage'
+            };
+            angular.module('MTApp').constant('ConfigData', configData);
+
+        })();
+
+    </script>
+
+
+
+</head>
+<body>
+
+    <div class="container">
+        <div ui-view></div>
+    </div>
+
+</body>
+</html>

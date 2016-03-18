@@ -1,0 +1,218 @@
+<!-- uiView:  -->
+
+<div ui-view="" ui-view-name="entry-view"><!-- uiView: header -->
+    <div ui-view="header">
+        <nav class="nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-5">
+                        <nav-toggle ng-click="nav.toggle()">
+                            <button class="nav--toggle icon-nav">
+                                <a href="/ng"> <span class="icon-burger"></span></a>
+                            </button>
+                        </nav-toggle>
+                        <page-nav open="nav.isOpen" class="ng-isolate-scope">
+                            <ul class="nav--list" ng-class="{'open': pages.open}">
+                                <li>
+                                    <a ui-sref="home">HOME</a>
+
+                                </li>
+
+                                <li>
+                                    <a ui-sref="speaker">Speakers</a>
+                                </li>
+
+                                <li>
+                                    <a ui-sref="author">Pluralsight Authors</a>
+                                </li>
+                            </ul>
+                        </page-nav>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+
+        <br/>
+
+        <div class="content--section">
+            <h2 class="type--lead">Presenters</h2>
+            <li class="row ng-scope" ng-repeat="speaker in speaker.speakers">
+                <div class="col-sm-2">
+                    <div class="speakers--image">
+                        <img ng-src="{{speaker.speakerImageUrl}}?format=jpg&height=400&width=400&amp;scale=both&mode=pad&Bgcolor=ffffff"
+                             alt="picture {{speaker.firstName}} {{speaker.lastName}}">
+                    </div>
+                </div>
+                <div class="speakers--info col-sm-10">
+                    <header class="heading small">
+                        <a href="#">
+                            <h4 class="color ng-binding">{{speaker.firstName}} {{speaker.lastName}}</h4>
+                        </a>
+
+                    </header>
+
+
+                </div>
+            </li>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- uiView: footer -->
+    <div ui-view="footer" class="ng-scope">
+        <div id="sponsors" class="nav--section container ng-scope">
+            <div class="separator">
+                <span class="separator--icon icon-heart"></span>
+            </div>
+
+
+            <h2 class="type--lead">Premiere Sponsor</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--premiere">
+                    <a href="http://rangle.io/" target="_blank"><img class="sponsor--img"
+                                                                     ng-src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"
+                                                                     alt="Rangle.io"
+                                                                     src="https://angularu.com/content/ng/angu/images/rangleio-logo-rgb.jpg"></a>
+                </li>
+            </ul>
+
+
+            <h2 class="type--lead">Gold Sponsors</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="http://form.io/" target="_blank" href="http://form.io/"><img class="sponsor--img"
+                                                                                             ng-src="https://angularu.com/content/ng/angu/images/formio-logo-full.png"
+                                                                                             alt="formio"
+                                                                                             src="https://angularu.com/content/ng/angu/images/formio-logo-full.png"></a>
+                </li>
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="http://orcsweb.com/" target="_blank" href="http://orcsweb.com/"><img
+                            class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/orcsweb.png"
+                            alt="Orcsweb" src="https://angularu.com/content/ng/angu/images/orcsweb.png"></a>
+                </li>
+
+                <li class="sponsor sponsor--gold">
+                    <a ng-href="https://microsoft.com" target="_blank" href="https://microsoft.com"><img
+                            class="sponsor--img" ng-src="https://angularu.com/content/ng/angu/images/mslogo.png"
+                            alt="Microsoft" src="https://angularu.com/content/ng/angu/images/mslogo.png"></a>
+                </li>
+
+            </ul>
+
+            <h2 class="type--lead">Silver Sponsors</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="http://pluralsight.com/" target="_blank" href="http://pluralsight.com/"><img
+                            class="sponsor--img"
+                            ng-src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png" alt="Puralsight"
+                            src="https://angularu.com/content/ng/angu/images/pluralsight-141-90.png"></a>
+                </li>
+
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="https://developers.braintreepayments.com" target="_blank"
+                       href="https://developers.braintreepayments.com"><img class="sponsor--img"
+                                                                            ng-src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png"
+                                                                            alt="Braintree PayPal"
+                                                                            src="https://angularu.com/content/ng/angu/images/Braintree_Master_Logo_Crop.png"></a>
+                </li>
+
+
+            </ul>
+
+
+            <h2 class="type--lead">Media Partners</h2>
+            <ul class="sponsor--list">
+                <li class="sponsor sponsor--silver">
+                    <a ng-href="https://www.airpair.com/angularjs " target="_blank"
+                       href="https://www.airpair.com/angularjs"><img class="sponsor--img"
+                                                                     ng-src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250"
+                                                                     alt="AirPair"
+                                                                     src="https://angularu.com/sponsorimage/20140724233256-877.jpg?format=jpg&amp;width=250"></a>
+                </li>
+            </ul>
+
+            <div class="text-center">
+                <a ng-href="mailto:sponsor@angularu.com" class="btn btn-primary btn-lg"
+                   href="mailto:sponsor@angularu.com">Become a sponsor</a>
+            </div>
+        </div>
+
+
+        <footer class="footer ng-scope">
+            <div class="footer--top">
+
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-md-12 footer--contact">
+                            <a ng-href="https://angularu.com/about/Privacy" href="https://angularu.com/about/Privacy">Privacy</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="https://angularu.com/about/CodeOfConduct"
+                               href="https://angularu.com/about/CodeOfConduct">Code of Conduct</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+                            <a ng-href="mailto:service2015@angularu.com" href="mailto:service2015@angularu.com">Contact
+                                us</a>
+                            <span>&nbsp;&nbsp;|&nbsp;&nbsp;</span>
+
+                            <div class="social alt">
+                                <h4>Follow us on:</h4>
+                                <ul>
+                                    <li><a ng-href="http://twitter.com/angularu" target="_blank" class="icon-twitter"
+                                           href="http://twitter.com/angularu"></a></li>
+                                    <li><a ng-href="https://www.facebook.com/angularu" target="_blank" class="icon-fb"
+                                           href="https://www.facebook.com/angularu"></a></li>
+                                    <li><a ng-href="https://plus.google.com/u/0/communities/100721362580915494668"
+                                           target="_blank" class="icon-gplus"
+                                           href="https://plus.google.com/u/0/communities/100721362580915494668"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sponsors">
+
+                <div class="container">
+                    <section class="sponsor--box ng-hide"
+                             ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'}).length &gt; 0">
+                        <h3 class="uppercase">Platinum</h3>
+
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Platinum'} -->
+                        </div>
+                    </section>
+
+                    <section class="sponsor--box ng-hide"
+                             ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Gold'}).length &gt; 0">
+                        <h3 class="uppercase">Gold</h3>
+
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Gold'} -->
+                        </div>
+                    </section>
+
+                    <section class="sponsor--box ng-hide"
+                             ng-show="(vm.sponsors | filter: {sponsorSupportLevel: 'Silver'}).length &gt; 0">
+                        <h3 class="uppercase">Silver</h3>
+
+                        <div class="sponsor--links">
+                            <!-- ngRepeat: sponsor in vm.sponsors | filter: {sponsorSupportLevel: 'Silver'} -->
+                        </div>
+                    </section>
+
+
+                </div>
+            </div>
+        </footer>
+    </div>
+</div>
+
+
+
+
+

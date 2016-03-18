@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MTApp">
+<head>
+    <base href="/">   <!--required for html5mode-->
+    <meta charset="UTF-8">
+    <title>SVCC</title>
+
+    <link rel="stylesheet" href="Content/style/site.css" />
+
+    <script src="app.js"></script>
+    <script src="templates.js"></script>
+
+    <script type="text/javascript">
+        (function() {
+            'use strict';
+
+            var configData = {
+                tenantName: 'ANGU',
+                TopTitle: 'Registration Closed 12/25/2015',
+                ShowSpeakerPage: 'True'
+            };
+            angular.module('MTApp').constant('ConfigData', configData);
+
+        })();
+    </script>
+
+
+</head>
+<body>
+
+<div class="container">
+    <div ui-view></div>
+</div>
+
+<!--<ul>-->
+    <!--<li>-->
+        <!--<a href="/home">HOME</a>-->
+    <!--</li>-->
+    <!--<li>-->
+        <!--<a href="/speaker">SPEAKER</a>-->
+    <!--</li>-->
+<!--</ul>-->
+
+<!--<div class="container">-->
+    <!--<div ui-view></div>-->
+<!--</div>-->
+
+<!--<div ng-controller="HomeController">-->
+<!--<table border="1">-->
+    <!--<thead>-->
+    <!--<tr>-->
+        <!--<th>Title</th>-->
+        <!--<th>Speaker</th>-->
+    <!--</tr>-->
+    <!--</thead>-->
+    <!--<tbody>-->
+    <!--<tr ng-repeat="session in sessions" >-->
+        <!--<td>-->
+            <!--{{ session.title | uppercase }}-->
+        <!--</td>-->
+        <!--<td>-->
+            <!--{{ session.speaker }}-->
+        <!--</td>-->
+    <!--</tr>-->
+    <!--</tbody>-->
+
+<!--</table>-->
+<!--</div>-->
+
+</body>
+
+
+
+</html>

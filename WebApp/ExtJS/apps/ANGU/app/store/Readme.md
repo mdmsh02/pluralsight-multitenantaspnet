@@ -1,0 +1,1 @@
+stores are typically defined in the view-models as of extjs5 and above
